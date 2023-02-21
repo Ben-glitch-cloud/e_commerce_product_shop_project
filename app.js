@@ -4,8 +4,12 @@ const port = 3000
 
 app.set('view engine', 'ejs');
 
+const ProductModels = require('./model/products.js')
+
+let product_models = new ProductModels(); 
+
 app.get('/', function (req, res) {
-    res.render('pages/index');
+    res.render('pages/index', {data: product_models.getAllProducts()});
 })
 
 app.listen(port, () => {
