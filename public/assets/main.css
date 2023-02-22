@@ -8,4 +8,23 @@ body {
 
 p {
   color: black;
+}
+
+.contaner_product {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.contaner_product .product_card {
+  width: 200px;
+  box-sizing: content-box;
+}
+.contaner_product .product_card img {
+  width: inherit;
+  height: 200px;
+}
+.contaner_product .product_card p {
+  font-family: "Lato", sans-serif;
 }/*# sourceMappingURL=main.css.map */

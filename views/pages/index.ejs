@@ -12,8 +12,14 @@
     <nav>
 
     </nav>
+<div class="contaner_product">
     <% data.forEach((item) => {  %>
-        <p><%= item['description'] %></p>
+        <div class="product_card">
+            <img src="<%= item['image'] %>">
+            <p><%= item['title'] %></p>
+            <p><%= item['rating']['rate'] %></p>
+        </div>
     <%  }) %>
+</div>
 </body>
 </html>
