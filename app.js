@@ -1,15 +1,15 @@
-const express = require('express')
+import express from 'express';
 const app = express()
 const port = 3000
 
 app.set('view engine', 'ejs');
 
-const ProductModels = require('./model/products.js')
+import ProductModels from './model/products.js';
 
 let product_models = new ProductModels(); 
 
-app.get('/', function (req, res) {
-    res.render('pages/index', {data: product_models.getAllProducts()});
+app.get('/', async function (req, res) {
+    res.render('pages/index', {data: await product_models.getAllProducts()});
 })
 
 app.listen(port, () => {
