@@ -24,7 +24,9 @@
         <h2>All Products</h2>
     </div>
 <div class="contaner_product">
-    <% data.forEach((item) => {  %>
+    <% data.forEach((item) => { %>
+        <form action="/product/<%= item['id'] %>" method="get"> 
+        <button type="submit" value="Submit">
         <div class="product_card">
             <img src="<%= item['image'] %>"> 
             <div class="product_card_info">
@@ -33,6 +35,8 @@
                 <p>£ <%= item['price']%></p>
             </div>
         </div>
+        </button>
+        </form>
     <%  }) %>
 </div>
 </body>

@@ -22,6 +22,10 @@ app.get('/', async function (req, res) {
     res.render('pages/index', {data: await product_models.getAllProducts()});
 })
 
+app.get('/product/:id', async function (req, res) {
+    res.render('pages/product', {product_data: await product_models.getOneProduct(req.params.id)});
+})
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })

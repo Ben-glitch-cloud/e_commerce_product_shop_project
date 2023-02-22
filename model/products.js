@@ -13,6 +13,16 @@ export default class ShopProducts{
         }
     }
 
+    async getOneProduct(id_data){
+        let single_product_data
+        try{
+            await fetch(`https://fakestoreapi.com/products/${id_data}`).then(res => res.json()).then(data => single_product_data = data)
+            return single_product_data
+        }catch(error){
+            throw error
+        }
+    }   
+
 }
 
 // module.exports = ShopProducts 
