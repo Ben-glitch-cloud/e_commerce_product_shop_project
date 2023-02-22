@@ -4,9 +4,7 @@ import fetch from "node-fetch";
 export default class ShopProducts{
     
     async getAllProducts(){
-
         let all_product_data 
-
         try{
             await fetch('https://fakestoreapi.com/products').then(res => res.json()).then(data => all_product_data = data)
             return all_product_data

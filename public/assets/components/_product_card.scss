@@ -6,16 +6,43 @@
     justify-content: space-evenly;
     flex-direction: row;
     flex-wrap: wrap;
+    row-gap: 10px;
+    
 
     .product_card{
+
         width: 200px;
         box-sizing: content-box;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        cursor: pointer;
+        overflow: hidden;
+
         img{
-            width: inherit;
+            width: 100%;
             height: 200px;
+            z-index: 0;
+            transition: 0.5s all ease-in-out;
         }
-        p{
-            font-family: $base-front;
+
+        img:hover{
+           transform: scale(1.2);
+        }
+
+        .product_card_info{
+
+            margin-top: 15px;
+            margin-bottom: 7.5px;
+            z-index: 2;
+            position: relative;
+            
+            p{
+                font-family: $base-front;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin: 0px;
+                padding: 1.5px 10px;
+            }
         }
     }
 }
