@@ -9,7 +9,6 @@ export default class ShopProducts{
 
         try{
             await fetch('https://fakestoreapi.com/products').then(res => res.json()).then(data => all_product_data = data)
-            console.log(all_product_data)
             return all_product_data
         }catch(error){
             throw error
