@@ -19,7 +19,7 @@ import ProductModels from './model/products.js';
 let product_models = new ProductModels(); 
 
 app.get('/', async function (req, res) {
-    res.render('pages/index', {data: await product_models.getAllProducts()});
+    res.render('pages/index', {products_data: await product_models.getAllProducts(), categorie_data: await product_models.getAllProductCategories()});
 })
 
 app.get('/product/:id', async function (req, res) {

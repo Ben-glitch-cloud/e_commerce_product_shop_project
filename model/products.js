@@ -13,6 +13,19 @@ export default class ShopProducts{
         }
     }
 
+    async getAllProductCategories(){
+        let all_categorie_data 
+        try{
+            await fetch('https://fakestoreapi.com/products/categories').then(res => res.json()).then(data => all_categorie_data = data)
+            // adds the option to see all products again
+            all_categorie_data.push('All Products')
+            all_categorie_data.reverse()
+            return all_categorie_data 
+        }catch(error){
+            throw error
+        }
+    }
+
     async getOneProduct(id_data){
         let single_product_data
         try{
