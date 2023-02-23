@@ -26,6 +26,16 @@ export default class ShopProducts{
         }
     }
 
+    async getOneCategorie(categorie){
+        let one_categorie 
+        try{
+            await fetch(`https://fakestoreapi.com/products/category/${categorie}`).then(res => res.json()).then(data => one_categorie = data)
+            return one_categorie 
+        }catch(error){
+            throw error
+        }
+    }
+
     async getOneProduct(id_data){
         let single_product_data
         try{

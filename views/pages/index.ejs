@@ -20,7 +20,7 @@
     </nav>
 <section class="product_section">
     <h2>All Products</h2> 
-    <form action="">
+    <form action="/categorie/" method="post">
         <select name="categories">
             <% categorie_data.forEach((item) => { %>
                 <option value="<%= item %>"><%= item %></option>
