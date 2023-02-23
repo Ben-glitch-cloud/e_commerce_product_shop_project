@@ -1,6 +1,7 @@
 import bodyParser from 'body-parser';
 import express from 'express';
 import path from 'path';
+import session from 'express-session';
 import { fileURLToPath } from 'url';
 import ProductModels from './model/products.js';
 
@@ -13,19 +14,21 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+app.use(session({
+    secret: 'keyboard',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true }
+  }))
+
 app.use(bodyParser.json());
 
 app.set('view engine', 'ejs');
-// app.use(express.bodyParser());
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// app.use(express.static("public"));
 app.use('/public', express.static('public'));
-// app.use(express.static(path.join(__dirname, "/public")));
-
-
 
 let product_models = new ProductModels(); 
 
@@ -38,8 +41,11 @@ app.get('/product/:id', async function (req, res) {
 })
 
 app.post('/categorie/', async function (req, res){
-    if(req.body.categories === 'All Products'){ res.redirect('/') }
-    res.render('pages/index', {products_data: await product_models.getOneCategorie(req.body.categories), categorie_data: await product_models.getAllProductCategories()});
+    if(req.body.categories === 'All Products'){ 
+        res.redirect('/') 
+    } else {
+        res.render('pages/index', {products_data: await product_models.getOneCategorie(req.body.categories), categorie_data: await product_models.getAllProductCategories()});
+    }
 })
 
 app.listen(port, () => {
