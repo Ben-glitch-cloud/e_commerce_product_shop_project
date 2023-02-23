@@ -4,10 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/assets/product_page.css" type="text/css">
     <title>Document</title>
 </head>
 <body>
-    <p><%= product_data['title'] %></p>
-    <p><%= product_data['description'] %></p>
+    <nav>
+        
+    </nav>
+    <div class="product_layout_page">
+        <img src="<%= product_data['image']%>" alt="product_image">
+        <div class="product_info">
+            <h2><%= product_data['title'] %></h2>
+            <p><%= product_data['description'] %></p>
+            <p>£ <%= product_data['price'] %></p>
+            <p>Rating : <%= product_data['rating']['rate'] %></p>
+            <p>Number of ratings <%= product_data['rating']['count'] %></p>
+            <form action="">
+                <button>-</button>
+                <input type="number" min="1" value="1">
+                <button>+</button>
+            </form> 
+            <button type="submit" value="Submit">Add to busket</button>
+        </div>
+    </div>
 </body>
 </html>

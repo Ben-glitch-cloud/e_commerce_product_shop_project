@@ -1,0 +1,26 @@
+.product_layout_page {
+  display: flex;
+  flex-direction: row;
+}
+.product_layout_page img {
+  width: 600px;
+  height: 600px;
+}
+.product_layout_page .product_info h2 {
+  font-family: "Roboto Mono", monospace;
+}
+.product_layout_page .product_info p {
+  font-family: "Lato", sans-serif;
+}
+
+html {
+  margin: 0px;
+}
+
+body {
+  margin: 0px;
+}
+
+p {
+  color: black;
+}/*# sourceMappingURL=product_page.css.map */

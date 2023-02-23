@@ -1,9 +1,9 @@
 @import '../core/variables';
 
-.header_container{
-    margin-left: 15px;
-    height: 75px;
-    display: flex;
-    align-items: center;
-    font-family: $base-headings;
+.product_section{
+    margin: 0px 15px;
+
+    h2{
+        font-family: $base-headings;
+    }
 }

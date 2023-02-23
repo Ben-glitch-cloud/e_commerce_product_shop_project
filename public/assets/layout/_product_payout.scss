@@ -1,0 +1,23 @@
+@import '../core/variables';
+
+.product_layout_page{
+    display: flex;
+    flex-direction: row;
+
+    img{
+       width: 600px;
+       height: 600px;
+    }
+
+    .product_info{
+
+        h2{
+            font-family: $base-headings;
+        }
+
+        p{
+            font-family: $base-front;
+        }
+
+    }
+}
