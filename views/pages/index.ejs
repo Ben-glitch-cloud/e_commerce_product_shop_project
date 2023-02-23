@@ -14,13 +14,21 @@
         <ul>
             <li>About us</li>
             <li>Whats new</li>
-            <li>Sign In</li>
+            <% if(user_id === undefined) { %>
+                <li><a href="./login">Sign in</a></li>
+            <% } else { %>
+                <li>
+                    <form action="/logout/<%= user_id %>" method="get">
+                        <input type="submit" value="Submit"></input>
+                    </form>
+                </li>
+            <% } %>
             <li>Basket</li>
         </ul>
     </nav>
 <section class="product_section">
     <h2>All Products</h2> 
-    <form action="/categorie/" method="post">
+    <form action="/" method="post">
         <select name="categories">
             <% categorie_data.forEach((item) => { %>
                 <option value="<%= item %>"><%= item %></option>
