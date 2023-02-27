@@ -31,7 +31,7 @@ let product_models = new ProductModels();
 let users = new Users();
 
 app.get('/', async function (req, res) {
-    res.render('pages/index', {products_data: await product_models.getAllProducts(), categorie_data: await product_models.getAllProductCategories(), user_id: req.cookies.user_id});
+    res.render('pages/index', {products_data: await product_models.getAllProducts(), categorie_data: await product_models.getAllProductCategories(), user_id: req.cookies.user_id, categorie_name: 'All Products'});
 })
 
 app.get('/product/:id', async function (req, res) {
@@ -42,7 +42,7 @@ app.post('/', async function (req, res){
     if(req.body.categories === 'All Products'){ 
         res.redirect('/') 
     } else {
-        res.render('pages/index', {products_data: await product_models.getOneCategorie(req.body.categories), categorie_data: await product_models.getAllProductCategories(), user_id: req.cookies.user_id});
+        res.render('pages/index', {products_data: await product_models.getOneCategorie(req.body.categories), categorie_data: await product_models.getAllProductCategories(), user_id: req.cookies.user_id, categorie_name: req.body.categories});
     }
 })
 

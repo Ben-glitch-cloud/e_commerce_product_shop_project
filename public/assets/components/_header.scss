@@ -1,9 +1,47 @@
 @import '../core/variables';
 
 .product_section{
-    margin: 0px 15px;
+    width: 100%;
+    height: 250px;
 
-    h2{
-        font-family: $base-headings;
+    .product_section_container_header_form{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0px 25px;
+
+        form{
+            display: flex;
+            flex-direction: row;
+
+            input{
+                height: 35px;
+                border: 4px solid pink;
+                background: none;
+                font-size: 18px;
+                background-color: pink;
+                color: white;
+                $base-front: 'Lato', sans-serif; 
+            }:hover{
+                background-color: white;
+                color: pink;
+            }
+
+            select{
+                text-align: center;
+                background: none;
+                font-size: 18px;
+                color: pink;
+                border: 4px solid pink;
+                border-right: none;
+                $base-front: 'Lato', sans-serif; 
+            }
+        }
+
+        h2{
+            font-family: $base-headings;
+        }
     }
+
+    
 }

@@ -27,15 +27,19 @@
         </ul>
     </nav>
 <section class="product_section">
-    <h2>All Products</h2> 
-    <form action="/" method="post">
-        <select name="categories">
-            <% categorie_data.forEach((item) => { %>
-                <option value="<%= item %>"><%= item %></option>
-            <% }) %>
-        </select>
-        <input type="submit" value="Submit">
-    </form>
+
+    <div class="product_section_container_header_form">
+        <h2><%= categorie_name %></h2> 
+        <form action="/" method="post">
+            <select name="categories">
+                <% categorie_data.forEach((item) => { %>
+                    <option value="<%= item %>"><%= item %></option>
+                <% }) %>
+            </select>
+            <input type="submit" value="Look">
+        </form>
+    </div>
+    
     <div class="contaner_boreder">
         <div class="contaner_product">
             <% products_data.forEach((item) => { %>
