@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/assets/css/all.min.css">
     <link rel="stylesheet" href="/public/assets/main.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Mono:wght@100;400&display=swap" rel="stylesheet">
     <title>Home Page</title>
@@ -49,8 +50,13 @@
                     <img src="<%= item['image'] %>"> 
                     <div class="product_card_info">
                         <p id="item_header"><%= item['title'] %></p>
-                        <p>Rating : <%= item['rating']['rate'] %></p>
-                        <p>£ <%= item['price']%></p>
+                        <p>£ <%= item['price'].toFixed(2) %></p>
+                        <div class="rating_product_container">
+                            <% for(let i = 0; i < Math.round(item['rating']['rate']); i++ ) { %>
+                                <i class="fa-sharp fa-solid fa-star" style="color: #75A681;"></i>
+                            <% } %>
+                            <p id="number_of_ratings"><%= item['rating']['count'] %></p>
+                        </div>
                     </div>
                 </div>
                 </button>

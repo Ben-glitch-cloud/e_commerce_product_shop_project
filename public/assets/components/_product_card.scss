@@ -53,6 +53,18 @@ margin: 0px 25px;
             #item_header{
                 font-size: 16px;
             }
+
+            .rating_product_container{
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                padding: 3px 10px;
+            }
+
+            #number_of_ratings{
+                margin: 0px;
+                padding: 0px 7px;
+            }
             
             p{
                 font-family: $base-front;

@@ -16,23 +16,24 @@
 
             input{
                 height: 35px;
-                border: 4px solid pink;
+                border: 4px solid $main-pink-colour;
                 background: none;
                 font-size: 18px;
-                background-color: pink;
+                background-color: $main-pink-colour;
                 color: white;
                 $base-front: 'Lato', sans-serif; 
             }:hover{
                 background-color: white;
-                color: pink;
+                color: $main-pink-colour;
             }
 
             select{
                 text-align: center;
+                width: 190px;
                 background: none;
                 font-size: 18px;
-                color: pink;
-                border: 4px solid pink;
+                color: $main-pink-colour;
+                border: 4px solid $main-pink-colour;
                 border-right: none;
                 $base-front: 'Lato', sans-serif; 
             }
