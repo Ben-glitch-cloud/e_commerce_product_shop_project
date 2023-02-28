@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/assets/css/all.min.css">
+    <link rel="stylesheet" href="/public/assets/basket.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Mono:wght@100;400&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <img src="../../public/assets/images/All_in_one_logo.png">
+        <ul>
+            <li>About us</li>
+            <li><a href="./">Products</a></li>
+            <% if(user_id === undefined) { %>
+                <li><a href="./login">Sign in</a></li>
+            <% } else { %>
+                <li>
+                    <form action="/logout/<%= user_id %>" method="get">
+                        <input type="submit" value="Submit"></input>
+                    </form>
+                </li>
+            <% } %>
+            <li>Basket</li>
+        </ul>
+    </nav>
+    <div class="basket_container">
+        <% if(user_id === undefined) {%>
+            <div class="basket_message">
+                <p>Sorry, you must sign in to your account in order to see your basket.</p>
+                <p><a href="./login">Sign in here</a></p>
+            </div>
+        <% } else { %>
+
+            <div>
+                <% basket_list.forEach((item) => { %>
+                    <h2><%= item['productData']['title'] %></h2>
+                    <p>£ <%= item['productData']['price'] %></p>
+                    <p><%= item['quantity'] %></p>
+                <% }) %>
+            </div>
+
+        <% }%>
+    </div>
+</body>
+</html>

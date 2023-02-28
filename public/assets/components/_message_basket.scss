@@ -1,0 +1,23 @@
+@import '../core/variables';
+
+.basket_container{
+
+    width: 100%;
+
+    .basket_message{
+        height: 120px;
+        margin: 50px 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #F2F1F0;
+        font-family: $base-front;
+
+        p{
+            margin: 5px 0px;
+            padding: 0px;
+        }
+    }
+
+}

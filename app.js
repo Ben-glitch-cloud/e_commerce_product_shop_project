@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 import { fileURLToPath } from 'url';
 import ProductModels from './model/products.js';
 import Users from './model/users.js'
+import Basket from './model/basket.js'
 
 const app = express()
 const port = 3000
@@ -29,6 +30,7 @@ app.use('/public', express.static('public'));
 
 let product_models = new ProductModels(); 
 let users = new Users();
+let basket = new Basket();
 
 app.get('/', async function (req, res) {
     res.render('pages/index', {products_data: await product_models.getAllProducts(), categorie_data: await product_models.getAllProductCategories(), user_id: req.cookies.user_id, categorie_name: 'All Products'});
@@ -48,6 +50,19 @@ app.post('/', async function (req, res){
 
 app.get('/login', function(req, res){
     res.render('pages/login')
+})
+
+app.get('/basket', async function(req, res){
+    let basket_user_data_only_id
+    if(req.cookies['user_id'] !== undefined){
+        basket_user_data_only_id = await basket.getUserBasket(req.cookies['user_id'])
+    }
+        const result = await Promise.all(basket_user_data_only_id[0]['products'].map(async (basket_item) => {
+             basket_item['productData'] = await product_models.getOneProduct(basket_item['productId'])
+             return basket_item
+        }))
+
+    res.render('pages/basket', {user_id: req.cookies['user_id'], basket_list: result})
 })
 
 app.get('/logout/:id', function(req, res){
