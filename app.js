@@ -18,7 +18,6 @@ app.use(bodyParser.urlencoded({
 
 app.use(cookieParser())
 
-
 app.use(bodyParser.json());
 
 app.set('view engine', 'ejs');
@@ -54,13 +53,27 @@ app.get('/login', function(req, res){
 
 app.get('/basket', async function(req, res){
     let basket_user_data_only_id
-    if(req.cookies['user_id'] !== undefined){
-        basket_user_data_only_id = await basket.getUserBasket(req.cookies['user_id'])
+   
+    if(req.cookies['user_id'] === undefined){
+        res.render('pages/basket', {user_id: req.cookies['user_id'], basket_list: []})
     }
+
+    if(req.cookies['user_id'] !== undefined && req.cookies.user_basket === undefined){
+        console.log('this funaction should be affoded if the cookie is found')
+        basket_user_data_only_id = await basket.getUserBasket(req.cookies['user_id'])
+    } else {
+        basket_user_data_only_id = req.cookies.user_basket
+    }
+
+    if(res.cookie.user_basket === undefined){
+        res.cookie('user_basket', basket_user_data_only_id)
+    } 
+    
         const result = await Promise.all(basket_user_data_only_id[0]['products'].map(async (basket_item) => {
              basket_item['productData'] = await product_models.getOneProduct(basket_item['productId'])
              return basket_item
         }))
+    
 
     res.render('pages/basket', {user_id: req.cookies['user_id'], basket_list: result})
 })
@@ -68,19 +81,29 @@ app.get('/basket', async function(req, res){
 app.get('/logout/:id', function(req, res){
     if(req.cookies.user_id !== undefined){
         res.clearCookie("user_id")
+        res.clearCookie("user_basket")
         console.log("You have logged out")
     }
     res.redirect('/')
 })
 
 app.post('/userlogin', async function (req, res){
-    let user_result = await users.userLoginVerification(req.body.username, req.body.password);
+    let user_result = await users.userLoginVerification(req.body.username, req.body.password), basket_user_data_only_id
     if(user_result !== undefined){
         res.cookie('user_id', user_result)
+        // basket_user_data_only_id = await basket.getUserBasket(req.cookies['user_id'])
+        // res.cookie('user_basket', basket_user_data_only_id)
         res.redirect('/')
     } else {
         res.render('pages/login')
     }
+})
+
+app.post('/add_product_to_basket/:id', function(req, res){
+    console.log(req.cookies['user_basket'], 'can be read')
+    let result = basket.addItemsToBasket(req.params.id, req.body.product_puantity, req.cookies['user_basket'])
+    res.cookie('user_basket', result)
+    res.redirect(`/product/${req.params.id}`)
 })
 
 app.listen(port, () => {

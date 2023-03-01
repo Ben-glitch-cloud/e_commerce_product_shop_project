@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/assets/css/all.min.css">
-    <link rel="stylesheet" href="/public/assets/basket.css" type="text/css">
+    <link rel="stylesheet" href="/public/assets/basket.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Mono:wght@100;400&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
@@ -20,11 +20,11 @@
             <% } else { %>
                 <li>
                     <form action="/logout/<%= user_id %>" method="get">
-                        <input type="submit" value="Submit"></input>
+                        <input type="submit" value="Logout"></input>
                     </form>
                 </li>
             <% } %>
-            <li>Basket</li>
+            <li><a href="./basket"><i class="fa-sharp fa-solid fa-basket-shopping fa-lg"></i></a></li>
         </ul>
     </nav>
     <div class="basket_container">
@@ -34,15 +34,27 @@
                 <p><a href="./login">Sign in here</a></p>
             </div>
         <% } else { %>
-
-            <div>
+            <div class="basket_list_container">
                 <% basket_list.forEach((item) => { %>
-                    <h2><%= item['productData']['title'] %></h2>
-                    <p>£ <%= item['productData']['price'] %></p>
-                    <p><%= item['quantity'] %></p>
+                    <div class="basket_item">
+                        <div class="basket_image">
+                            <img src="<%= item['productData']['image'] %>">
+                        </div> 
+                        <div class="basket_item_container">
+                            <div class="basket_item_data">
+                            <div class="basket_information">
+                                <h2><%= item['productData']['title'] %></h2>
+                                <p>£ <%= item['productData']['price'] %></p>
+                                <p><%= item['quantity'] %></p>
+                            </div>
+                            <form>
+                                <input type="submit">
+                            </form>
+                        </div>
+                        </div>
+                    </div>
                 <% }) %>
             </div>
-
         <% }%>
     </div>
 </body>

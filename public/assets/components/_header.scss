@@ -13,35 +13,54 @@
         form{
             display: flex;
             flex-direction: row;
+            font-family: $base-front;
 
-            input{
+            label{
                 height: 35px;
-                border: 4px solid $main-pink-colour;
-                background: none;
-                font-size: 18px;
-                background-color: $main-pink-colour;
-                color: white;
-                $base-front: 'Lato', sans-serif; 
-            }:hover{
-                background-color: white;
-                color: $main-pink-colour;
+                width: 100px;
+                font-size: 16px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-top: 3px solid $main-green-colour;
+                border-bottom: 3px solid $main-green-colour;
+                border-left:  3px solid $main-green-colour;
+                border-right: none;
+
+                p{
+                    position: relative;
+                    bottom: 1px;
+                }
+            }
+            
+            select{
+                width: 180px;
+                text-align:  center;
+                font-size: 16px;
+                border-top: 3px solid $main-green-colour;
+                border-bottom: 3px solid $main-green-colour;
+                border-left: none;
+                border-right: none;
             }
 
-            select{
-                text-align: center;
-                width: 190px;
-                background: none;
-                font-size: 18px;
-                color: $main-pink-colour;
-                border: 4px solid $main-pink-colour;
-                border-right: none;
-                $base-front: 'Lato', sans-serif; 
+            button{
+                width: 40px;
+                border-top: 3px solid $main-green-colour;
+                border-bottom: 3px solid $main-green-colour;
+                border-left: none;
+                border-right: 3px solid $main-green-colour;
+                background-color: white;
+                :hover{
+                    color: $main-green-colour;
+                }
             }
+
         }
 
         h2{
-            font-family: $base-headings;
-        }
+            font-family: $base-headings; 
+         }
     }
 
     

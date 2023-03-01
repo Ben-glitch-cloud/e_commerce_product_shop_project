@@ -20,11 +20,11 @@
             <% } else { %>
                 <li>
                     <form action="/logout/<%= user_id %>" method="get">
-                        <input type="submit" value="Submit"></input>
+                        <input type="submit" value="Logout"></input>
                     </form>
                 </li>
             <% } %>
-            <li><a href="./basket">Basket</a></li>
+            <li><a href="./basket"><i class="fa-sharp fa-solid fa-basket-shopping fa-lg"></i></a></li>
         </ul>
     </nav>
 <section class="product_section">
@@ -32,12 +32,13 @@
     <div class="product_section_container_header_form">
         <h2><%= categorie_name %></h2> 
         <form action="/" method="post">
+            <label class="form_search_categories"><p>Categories</p></label>
             <select name="categories">
                 <% categorie_data.forEach((item) => { %>
                     <option value="<%= item %>"><%= item %></option>
                 <% }) %>
             </select>
-            <input type="submit" value="Look">
+            <button type="submit"><i class="fa-sharp fa-solid fa-magnifying-glass fa-lg"></i></button>
         </form>
     </div>
     
