@@ -4,12 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/assets/product_page.css" type="text/css">
+    <link rel="stylesheet" href="/public/assets/css/all.min.css">
+    <link rel="stylesheet" href="/public/assets/product_page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Mono:wght@100;400&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     <nav>
-        
+        <img src="../../public/assets/images/All_in_one_logo.png">
+        <ul>
+            <li>About us</li>
+            <li><a href="/">Products</a></li>
+            <% if(user_id === undefined) { %>
+                <li><a href="./login">Sign in</a></li>
+            <% } else { %>
+                <li>
+                    <form action="/logout/<%= user_id %>" method="get">
+                        <input type="submit" value="Logout"></input>
+                    </form>
+                </li>
+            <% } %>
+            <li><a href="./basket"><i class="fa-sharp fa-solid fa-basket-shopping fa-lg"></i></a></li>
+        </ul>
     </nav>
     <div class="product_layout_page">
         <img src="<%= product_data['image']%>" alt="product_image">

@@ -36,7 +36,7 @@ app.get('/', async function (req, res) {
 })
 
 app.get('/product/:id', async function (req, res) {
-    res.render('pages/product', {product_data: await product_models.getOneProduct(req.params.id)});
+    res.render('pages/product', {product_data: await product_models.getOneProduct(req.params.id), user_id: req.cookies.user_id});
 })
 
 app.post('/', async function (req, res){
@@ -55,27 +55,25 @@ app.get('/basket', async function(req, res){
     let basket_user_data_only_id
    
     if(req.cookies['user_id'] === undefined){
-        res.render('pages/basket', {user_id: req.cookies['user_id'], basket_list: []})
-    }
-
-    if(req.cookies['user_id'] !== undefined && req.cookies.user_basket === undefined){
-        console.log('this funaction should be affoded if the cookie is found')
-        basket_user_data_only_id = await basket.getUserBasket(req.cookies['user_id'])
+        console.log('should work')
+        res.render('pages/basket', {user_id: undefined, basket_list: []})
     } else {
-        basket_user_data_only_id = req.cookies.user_basket
-    }
-
-    if(res.cookie.user_basket === undefined){
-        res.cookie('user_basket', basket_user_data_only_id)
-    } 
-    
+        if(req.cookies['user_id'] !== undefined && req.cookies.user_basket === undefined){
+            console.log('this funaction should be affoded if the cookie is found')
+            basket_user_data_only_id = await basket.getUserBasket(req.cookies['user_id'])
+        } else {
+            basket_user_data_only_id = req.cookies.user_basket
+        }
+        if(res.cookie.user_basket === undefined ){
+            res.cookie('user_basket', basket_user_data_only_id)
+        } 
         const result = await Promise.all(basket_user_data_only_id[0]['products'].map(async (basket_item) => {
              basket_item['productData'] = await product_models.getOneProduct(basket_item['productId'])
              return basket_item
         }))
+        res.render('pages/basket', {user_id: req.cookies['user_id'], basket_list: result})
+    }
     
-
-    res.render('pages/basket', {user_id: req.cookies['user_id'], basket_list: result})
 })
 
 app.get('/logout/:id', function(req, res){
@@ -90,9 +88,11 @@ app.get('/logout/:id', function(req, res){
 app.post('/userlogin', async function (req, res){
     let user_result = await users.userLoginVerification(req.body.username, req.body.password), basket_user_data_only_id
     if(user_result !== undefined){
+        // save the user id
         res.cookie('user_id', user_result)
-        // basket_user_data_only_id = await basket.getUserBasket(req.cookies['user_id'])
-        // res.cookie('user_basket', basket_user_data_only_id)
+        let basket_user_data_only_id = await basket.getUserBasket(user_result)
+        // save the basket 
+        res.cookie('user_basket', basket_user_data_only_id)
         res.redirect('/')
     } else {
         res.render('pages/login')
