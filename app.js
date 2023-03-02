@@ -71,9 +71,16 @@ app.get('/basket', async function(req, res){
              basket_item['productData'] = await product_models.getOneProduct(basket_item['productId'])
              return basket_item
         }))
+        
         res.render('pages/basket', {user_id: req.cookies['user_id'], basket_list: result})
     }
     
+}) 
+
+app.get('/basket/delete_item/:product_id', function(req, res){
+    let result = basket.deleteAllItemType(req.params.product_id, req.cookies.user_basket)
+    res.cookie('user_basket', result)
+    res.redirect('/basket')
 })
 
 app.get('/logout/:id', function(req, res){

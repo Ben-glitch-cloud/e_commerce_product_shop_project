@@ -28,4 +28,10 @@ export default class Basket {
         return basket
     }
 
+    deleteAllItemType(product_id, basket){
+        const newBasket = basket[0]['products'].filter( function(item) {if(item['productId'] !== Number(product_id)){return item}})
+        basket[0]['products'] = newBasket
+        return basket
+    }
+
 }

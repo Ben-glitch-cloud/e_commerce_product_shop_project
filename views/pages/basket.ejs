@@ -47,8 +47,8 @@
                                 <p>£ <%= item['productData']['price'] %></p>
                                 <p><%= item['quantity'] %></p>
                             </div>
-                            <form>
-                                <input type="submit">
+                            <form action="/basket/delete_item/<%= item['productId']%>" method="get">
+                                <button><i class="fa-sharp fa-solid fa-trash"></i></button>
                             </form>
                         </div>
                         </div>
