@@ -107,10 +107,15 @@ app.post('/userlogin', async function (req, res){
 })
 
 app.post('/add_product_to_basket/:id', function(req, res){
-    console.log(req.cookies['user_basket'], 'can be read')
     let result = basket.addItemsToBasket(req.params.id, req.body.product_puantity, req.cookies['user_basket'])
     res.cookie('user_basket', result)
     res.redirect(`/product/${req.params.id}`)
+})
+
+app.post('/basket/update_product_quntity/:id', function(req, res){
+    let result = basket.updateNumberInBasket(req.params.id, req.body.newQuntity, req.cookies['user_basket'])
+    res.cookie('user_basket', result) 
+    res.redirect('/basket')
 })
 
 app.listen(port, () => {

@@ -34,4 +34,14 @@ export default class Basket {
         return basket
     }
 
+    updateNumberInBasket(product_id, numberOfItems, basket){
+        if(Number(numberOfItems) > 0){
+            basket[0]['products'].map((item) => item['productId'] === Number(product_id) ? item['quantity'] = Number(numberOfItems) : item['quantity'])
+        } else {
+            const newBasket = basket[0]['products'].filter( function(item) {if(item['productId'] !== Number(product_id)){return item}})
+            basket[0]['products'] = newBasket
+        }
+        return basket 
+    }
+
 }
