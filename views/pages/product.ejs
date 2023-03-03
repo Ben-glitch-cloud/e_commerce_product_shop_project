@@ -16,7 +16,7 @@
             <li>About us</li>
             <li><a href="/">Products</a></li>
             <% if(user_id === undefined) { %>
-                <li><a href="./login">Sign in</a></li>
+                <li><a href="/login">Sign in</a></li>
             <% } else { %>
                 <li>
                     <form action="/logout/<%= user_id %>" method="get">
@@ -35,13 +35,14 @@
             <p>£ <%= product_data['price'] %></p>
             <p>Rating : <%= product_data['rating']['rate'] %></p>
             <p>Number of ratings <%= product_data['rating']['count'] %></p>
+            <% if(user_id !== undefined) {%>
             <form action="/add_product_to_basket/<%= product_data['id'] %>" method="post">
                 <button>-</button>
                 <input name="product_puantity" type="number" min="1" value="1">
                 <button>+</button>
                 <button type="submit" value="Submit">Add to busket</button>
             </form> 
-            
+            <% } %>
         </div>
     </div>
 </body>

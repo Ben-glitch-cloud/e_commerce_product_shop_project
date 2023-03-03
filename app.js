@@ -36,7 +36,7 @@ app.get('/', async function (req, res) {
 })
 
 app.get('/product/:id', async function (req, res) {
-    res.render('pages/product', {product_data: await product_models.getOneProduct(req.params.id), user_id: req.cookies.user_id});
+    res.render('pages/product', {product_data: await product_models.getOneProduct(req.params.id), user_id: req.cookies.user_id, });
 })
 
 app.post('/', async function (req, res){
