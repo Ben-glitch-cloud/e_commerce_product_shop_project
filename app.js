@@ -32,11 +32,12 @@ let users = new Users();
 let basket = new Basket();
 
 app.get('/', async function (req, res) {
-    res.render('pages/index', {products_data: await product_models.getAllProducts(), categorie_data: await product_models.getAllProductCategories(), user_id: req.cookies.user_id, categorie_name: 'All Products'});
+    res.render('pages/index', {products_data: await product_models.getAllProducts(), categorie_data: await product_models.getAllProductCategories(), user_id: req.cookies.user_id, categorie_name: 'All Products', numeberOfItemsInBasket: await basket.numberOfItemsInBasket(req.cookies['user_id'], req.cookies.user_basket)});
+    // apply this method to other navigations
 })
 
 app.get('/product/:id', async function (req, res) {
-    res.render('pages/product', {product_data: await product_models.getOneProduct(req.params.id), user_id: req.cookies.user_id, });
+    res.render('pages/product', {product_data: await product_models.getOneProduct(req.params.id), user_id: req.cookies.user_id, numeberOfItemsInBasket: await basket.numberOfItemsInBasket(req.cookies['user_id'], req.cookies.user_basket)});
 })
 
 app.post('/', async function (req, res){
@@ -72,7 +73,7 @@ app.get('/basket', async function(req, res){
              return basket_item
         }))
         
-        res.render('pages/basket', {user_id: req.cookies['user_id'], basket_list: result})
+        res.render('pages/basket', {user_id: req.cookies['user_id'], basket_list: result, numeberOfItemsInBasket: await basket.numberOfItemsInBasket(req.cookies['user_id'], req.cookies.user_basket)})
     }
     
 }) 

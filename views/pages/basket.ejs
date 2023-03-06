@@ -24,7 +24,11 @@
                     </form>
                 </li>
             <% } %>
-            <li><a href="./basket"><i class="fa-sharp fa-solid fa-basket-shopping fa-lg"></i></a></li>
+            <li><a href="./basket"><i class="fa-sharp fa-solid fa-basket-shopping fa-lg"></i>
+                <% if(user_id !== undefined) { %>
+                    <%= numeberOfItemsInBasket %></a>
+                <% } %>
+            </li>
         </ul>
     </nav>
     <div class="basket_container">
@@ -44,7 +48,7 @@
                             <div class="basket_item_data">
                             <div class="basket_information">
                                 <h2><%= item['productData']['title'] %></h2>
-                                <p>£ <%= item['productData']['price'] %></p>
+                                <p>Price : £ <%= item['productData']['price'] * item['quantity']  %></p>
                                 <form action="/basket/update_product_quntity/<%= item['productId'] %>" method="post">
                                     <input value="<%= item['quantity'] %>" name="newQuntity" type="number" min="0" max="100">
                                     <input type="submit" value="update">

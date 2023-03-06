@@ -44,4 +44,23 @@ export default class Basket {
         return basket 
     }
 
+    async numberOfItemsInBasket(user_id, stores_basket){
+
+        let NumberOfItemInTheUserBasket = 0
+        let userBasket
+
+        if(user_id !== undefined && stores_basket === undefined){
+            console.log('this funaction should be affoded if the cookie is found')
+            userBasket = await this.getUserBasket(user_id)
+        } else {
+            userBasket = stores_basket
+        }
+        
+        if(userBasket !== undefined){
+            NumberOfItemInTheUserBasket = userBasket[0]['products'].reduce((a, b) => a + b['quantity'], 0)
+        }
+
+        return NumberOfItemInTheUserBasket
+    }
+
 }
