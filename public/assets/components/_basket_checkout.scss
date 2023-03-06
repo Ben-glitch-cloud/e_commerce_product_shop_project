@@ -1,0 +1,43 @@
+
+@mixin top_basket_list{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    .inner_Basket_checkout{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        column-gap: 20px;
+
+        p{
+            font-family: $base-front;
+            font-size: 16px;
+        }
+
+        button{
+            border: 4px solid $main-green-colour;
+            height: 45px;
+            width: 120px;
+            background: white;
+            font-size: 16px;
+            &:hover{
+                background: $main-green-colour;
+                color: white;
+            }
+        }
+    }
+}
+
+.basket_checkout{
+    @include top_basket_list;
+    margin: 0px 25px;
+}
+
+.basket_checkout_bottom{
+    @include top_basket_list;
+    margin: 10px 25px;
+}

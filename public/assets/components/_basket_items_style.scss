@@ -1,3 +1,4 @@
+
 .basket_list_container{
 
     display: flex;
@@ -15,6 +16,7 @@
         justify-content: flex-start;
         margin: 20px 20px 0px 20px;
 
+
         .basket_image img{
             background-color: white;
             height: 100%;
@@ -26,20 +28,102 @@
         }
 
         .basket_item_container{
-
-            display: flex;
-            justify-content: space-between;
-
+            width: 100%;
 
             .basket_item_data{
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
+                height: 100%;
+
+                &:hover > .basket_navigation{
+                    animation-name: navBar;
+                    animation-duration: 1s;
+                    animation-timing-function: ease;
+                    animation-fill-mode: forwards;
+                }
+
+                .basket_information{
+                    h2{
+                        font-family: $base-front;
+                        overflow: hidden;
+                    }
+
+                    p{
+                        font-family: $base-front;
+                    }
+
+                    form{
+                        display: flex;
+                        height: 45px;
+
+                        .submit{
+                            border-right: solid $main-green-colour 4px;
+                            border-left: none;
+                            border-top: solid $main-green-colour 4px;
+                            border-bottom: solid $main-green-colour 4px;
+                            background: white;
+                            &:hover{
+                                background-color: $main-green-colour;
+                                color: white;
+                            }
+                        } 
+
+                        .quantityValue{
+                            width: 45px;
+                            text-align: center;
+                            border-right: none;
+                            border-top: solid $main-green-colour 4px;
+                            border-left: solid $main-green-colour 4px;
+                            border-bottom: solid $main-green-colour 4px;
+                            font-size: 16px;
+                        }
+                    }
+                }
+
+                .basket_navigation{
+                    display: flex;
+                    width: 0px;
+                    animation-name: noanimation;
+                    animation-duration: 1s;
+                    animation-timing-function: ease;
+                    animation-fill-mode: forwards;
+                    overflow: hidden;
+                    height: inherit;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $main-grey;
+
+                    @keyframes navBar {
+                        from{
+                            width: 0px;
+                        }
+                        to{
+                            width: 100px;
+                        }
+                    }
+
+                    @keyframes noanimation {
+                        from{
+                            width: 100px;
+                        }
+                        to{
+                            width: 0px;
+                        }
+                    }
+                    
+                    button{
+                        height: 45px;
+                        width: 45px;
+                        background: $main-grey;
+                        border: none;
+                        color: red;
+                        cursor: pointer;
+                    }
+                }
             }
-        }
+        } 
 
-       
-
-    }
-
+    } 
+    
 }

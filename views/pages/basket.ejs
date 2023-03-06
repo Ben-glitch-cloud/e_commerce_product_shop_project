@@ -38,6 +38,14 @@
                 <p><a href="./login">Sign in here</a></p>
             </div>
         <% } else { %>
+            <div class="basket_checkout">
+                <div class="inner_Basket_checkout">
+                    <p>Discount none</p>
+                    <p>Shipping Price £5.00</p>
+                    <p>Total Price <%= basket_list.reduce((a, b) => a + (b['productData']['price'] * b['quantity']), 0) %></p>
+                    <button>Check Out</button>
+                </div>
+            </div>
             <div class="basket_list_container">
                 <% basket_list.forEach((item) => { %>
                     <div class="basket_item">
@@ -48,14 +56,14 @@
                             <div class="basket_item_data">
                             <div class="basket_information">
                                 <h2><%= item['productData']['title'] %></h2>
-                                <p>Price : £ <%= item['productData']['price'] * item['quantity']  %></p>
+                                <p>Price : £<%= (item['productData']['price'] * item['quantity']).toFixed(2)  %></p>
                                 <form action="/basket/update_product_quntity/<%= item['productId'] %>" method="post">
-                                    <input value="<%= item['quantity'] %>" name="newQuntity" type="number" min="0" max="100">
-                                    <input type="submit" value="update">
+                                    <input onclick="inputChange" class='quantityValue <%= item['productId']%>' value="<%= item['quantity'] %>" name="newQuntity" type="number" min="0" max="100">
+                                    <input class="submit" type="submit" value="Update">
                                 </form>
                             </div>
-                            <form action="/basket/delete_item/<%= item['productId']%>" method="get">
-                                <button><i class="fa-sharp fa-solid fa-trash"></i></button>
+                            <form class="basket_navigation" action="/basket/delete_item/<%= item['productId']%>" method="get">
+                                <button><i class="fa-sharp fa-solid fa-trash fa-xl"></i></button>
                             </form>
                         </div>
                         </div>
@@ -64,5 +72,15 @@
             </div>
         <% }%>
     </div>
+    <% if(basket_list.length > 2) {%>
+    <div class="basket_checkout_bottom">
+        <div class="inner_Basket_checkout">
+            <p>Discount none</p>
+            <p>Shipping Price £5.00</p>
+            <p>Total Price <%= basket_list.reduce((a, b) => a + (b['productData']['price'] * b['quantity']), 0) %></p>
+            <button>Check Out</button>
+        </div>
+    </div>
+    <% } %>
 </body>
 </html>

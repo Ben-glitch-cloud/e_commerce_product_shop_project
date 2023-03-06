@@ -44,7 +44,7 @@ app.post('/', async function (req, res){
     if(req.body.categories === 'All Products'){ 
         res.redirect('/') 
     } else {
-        res.render('pages/index', {products_data: await product_models.getOneCategorie(req.body.categories), categorie_data: await product_models.getAllProductCategories(), user_id: req.cookies.user_id, categorie_name: req.body.categories});
+        res.render('pages/index', {products_data: await product_models.getOneCategorie(req.body.categories), categorie_data: await product_models.getAllProductCategories(), user_id: req.cookies.user_id, categorie_name: req.body.categories, numeberOfItemsInBasket: await basket.numberOfItemsInBasket(req.cookies['user_id'], req.cookies.user_basket)});
     }
 })
 
@@ -72,6 +72,10 @@ app.get('/basket', async function(req, res){
              basket_item['productData'] = await product_models.getOneProduct(basket_item['productId'])
              return basket_item
         }))
+
+        console.log(result)
+
+        
         
         res.render('pages/basket', {user_id: req.cookies['user_id'], basket_list: result, numeberOfItemsInBasket: await basket.numberOfItemsInBasket(req.cookies['user_id'], req.cookies.user_basket)})
     }
