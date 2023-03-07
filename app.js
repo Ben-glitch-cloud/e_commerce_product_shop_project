@@ -72,10 +72,6 @@ app.get('/basket', async function(req, res){
              basket_item['productData'] = await product_models.getOneProduct(basket_item['productId'])
              return basket_item
         }))
-
-        console.log(result)
-
-        
         
         res.render('pages/basket', {user_id: req.cookies['user_id'], basket_list: result, numeberOfItemsInBasket: await basket.numberOfItemsInBasket(req.cookies['user_id'], req.cookies.user_basket)})
     }
