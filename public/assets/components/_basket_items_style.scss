@@ -44,6 +44,8 @@
                 }
 
                 .basket_information{
+                    margin: 0px;
+                    padding: 0px;
                     h2{
                         font-family: $base-front;
                         overflow: hidden;
@@ -52,12 +54,26 @@
                     p{
                         font-family: $base-front;
                     }
+                    button{
+                        display: inline;
+                        height: 45px;
+                        width: 45px;
+                        border: 4px solid $main-green-colour;
+                        background: white;
+
+                        &:hover{
+                            background-color: $main-green-colour;
+                            color: white;
+                        }
+                    }
 
                     form{
-                        display: flex;
+                        top: 1px;
+                        position: relative;
                         height: 45px;
+                        display: inline-flex;
 
-                        .submit{
+                        .submitButtonStyle{
                             border-right: solid $main-green-colour 4px;
                             border-left: none;
                             border-top: solid $main-green-colour 4px;

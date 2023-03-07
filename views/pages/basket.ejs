@@ -57,10 +57,12 @@
                             <div class="basket_information">
                                 <h2><%= item['productData']['title'] %></h2>
                                 <p>Price : £<%= (item['productData']['price'] * item['quantity']).toFixed(2)  %></p>
+                                <button onclick="addItem(<%= item['productId']%>)"><i class="fa-sharp fa-solid fa-plus fa-xl"></i></button>
                                 <form action="/basket/update_product_quntity/<%= item['productId'] %>" method="post">
-                                    <input onclick="inputChange" class='quantityValue <%= item['productId']%>' value="<%= item['quantity'] %>" name="newQuntity" type="number" min="0" max="100">
-                                    <input class="submit" type="submit" value="Update">
+                                    <input onclick="inputChange" class='quantityValue <%= item['productId']%>' id="<%= item['productId']%>" value="<%= item['quantity'] %>" name="newQuntity" type="number" min="0" max="100">
+                                    <input class="submit<%= item['productId'] %> submitButtonStyle" type="submit" value="Update" disabled="disabled">
                                 </form>
+                                <button onclick="reduceItem(<%= item['productId']%>)"><i class="fa-sharp fa-solid fa-minus fa-xl"></i></button>
                             </div>
                             <form class="basket_navigation" action="/basket/delete_item/<%= item['productId']%>" method="get">
                                 <button><i class="fa-sharp fa-solid fa-trash fa-xl"></i></button>
@@ -83,4 +85,31 @@
     </div>
     <% } %>
 </body>
+    <script>
+        let storeObjectId = {}
+       function addItem(id){
+        document.getElementById(`${id}`).value++
+        if(storeObjectId[`${id}`] === undefined){
+            storeObjectId[`${id}`] = Number(document.getElementById(`${id}`).value - 1)
+            document.querySelector(`.submit${id}`).disabled = false
+        } else if(storeObjectId[`${id}`] !== undefined && storeObjectId[`${id}`] === Number(document.getElementById(`${id}`).value)) {
+            document.querySelector(`.submit${id}`).disabled = true
+        } else if(storeObjectId[`${id}`] !== undefined && storeObjectId[`${id}`] !== Number(document.getElementById(`${id}`).value)){
+            document.querySelector(`.submit${id}`).disabled = false
+        }
+       }
+
+       function reduceItem(id){
+        document.getElementById(`${id}`).value--
+        if(storeObjectId[`${id}`] === undefined){
+            storeObjectId[`${id}`] = Number(document.getElementById(`${id}`).value + 1)
+            document.querySelector(`.submit${id}`).disabled = false
+        } else if(storeObjectId[`${id}`] !== undefined && storeObjectId[`${id}`] === Number(document.getElementById(`${id}`).value)) {
+            document.querySelector(`.submit${id}`).disabled = true
+        } else if(storeObjectId[`${id}`] !== undefined && storeObjectId[`${id}`] !== Number(document.getElementById(`${id}`).value)){
+            document.querySelector(`.submit${id}`).disabled = false
+        }   
+       }
+
+    </script>
 </html>
