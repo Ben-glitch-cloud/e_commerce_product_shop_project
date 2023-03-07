@@ -13,7 +13,7 @@
     <nav>
         <img src="../../public/assets/images/All_in_one_logo.png">
         <ul>
-            <li>About us</li>
+            <li><a href="/about">About us</a></li>
             <li><a href="/">Products</a></li>
             <% if(user_id === undefined) { %>
                 <li><a href="/login">Sign in</a></li>
@@ -31,13 +31,20 @@
             <% } %>
         </ul>
     </nav>
+    <div class="product_container">
     <div class="product_layout_page">
         <img src="<%= product_data['image']%>" alt="product_image">
         <div class="product_info">
             <h2><%= product_data['title'] %></h2>
             <p><%= product_data['description'] %></p>
-            <p>£ <%= product_data['price'] %></p>
-            <p>Rating : <%= product_data['rating']['rate'] %></p>
+            <p>Price £<%= product_data['price'] %></p>
+
+            <div class="rating_product_container">
+                <% for(let i = 0; i < Math.round(product_data['rating']['rate']); i++ ) { %>
+                    <i class="fa-sharp fa-solid fa-star" style="color: #75A681;"></i>
+                <% } %>
+            </div>
+
             <p>Number of ratings <%= product_data['rating']['count'] %></p>
             <% if(user_id !== undefined) {%>
             
@@ -53,6 +60,7 @@
             </div>   
         </div>
     </div>
+</div>
     <footer>
         <div class="footerContainer">
             <h2>All For One</h2>

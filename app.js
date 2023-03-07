@@ -36,6 +36,10 @@ app.get('/', async function (req, res) {
     // apply this method to other navigations
 })
 
+app.get('/about', async function (req, res) {
+    res.render('pages/about', {user_id: req.cookies.user_id, numeberOfItemsInBasket: await basket.numberOfItemsInBasket(req.cookies['user_id'], req.cookies.user_basket)})
+})
+
 app.get('/product/:id', async function (req, res) {
     res.render('pages/product', {product_data: await product_models.getOneProduct(req.params.id), user_id: req.cookies.user_id, numeberOfItemsInBasket: await basket.numberOfItemsInBasket(req.cookies['user_id'], req.cookies.user_basket)});
 })
@@ -68,10 +72,19 @@ app.get('/basket', async function(req, res){
         if(res.cookie.user_basket === undefined ){
             res.cookie('user_basket', basket_user_data_only_id)
         } 
-        const result = await Promise.all(basket_user_data_only_id[0]['products'].map(async (basket_item) => {
-             basket_item['productData'] = await product_models.getOneProduct(basket_item['productId'])
-             return basket_item
-        }))
+
+        console.log(basket_user_data_only_id, 'this basket')
+        
+        if(basket_user_data_only_id.length === 0){
+            res.render('pages/basket', {user_id: req.cookies['user_id'], basket_list: [], numeberOfItemsInBasket: await basket.numberOfItemsInBasket(req.cookies['user_id'], req.cookies.user_basket)})
+            return
+        }
+
+            const result = await Promise.all(basket_user_data_only_id[0]['products'].map(async (basket_item) => {
+                basket_item['productData'] = await product_models.getOneProduct(basket_item['productId'])
+                return basket_item
+            }))
+        
         
         res.render('pages/basket', {user_id: req.cookies['user_id'], basket_list: result, numeberOfItemsInBasket: await basket.numberOfItemsInBasket(req.cookies['user_id'], req.cookies.user_basket)})
     }

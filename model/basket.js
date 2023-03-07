@@ -13,13 +13,22 @@ export default class Basket {
     }
 
     addItemsToBasket(product_id, quanity, basket){
+
+        if(basket.length === 0){
+            basket.push({"id": null, "userId": null, "2020-03-01T00:00:02.000Z": null, "products": [{"productId": Number(product_id), "quantity": Number(quanity)}]})
+            return basket
+        }
+
         let no_product_id_found = false
+
+        console.log(product_id, quanity, basket, 'see this data')
         basket[0]['products'].forEach((item) => {
             if(item['productId'] === Number(product_id)){
                 no_product_id_found = true
                 return 
             }
         })
+
         if(no_product_id_found){
             basket[0]['products'].map((item) => item['productId'] === Number(product_id) ? item['quantity'] += Number(quanity) : item['quantity'])
         } else {

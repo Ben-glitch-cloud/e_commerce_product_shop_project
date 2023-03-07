@@ -1,24 +1,3 @@
-.product_container {
-  margin: 0px 25px;
-}
-.product_container .product_layout_page {
-  display: flex;
-  flex-direction: row;
-}
-.product_container .product_layout_page img {
-  width: 600px;
-  height: 600px;
-}
-.product_container .product_layout_page .product_info {
-  margin: 0px 20px;
-}
-.product_container .product_layout_page .product_info h2 {
-  font-family: "Roboto Mono", monospace;
-}
-.product_container .product_layout_page .product_info p {
-  font-family: "Lato", sans-serif;
-}
-
 html {
   margin: 0px;
 }
@@ -76,52 +55,6 @@ nav img {
   width: 5%;
 }
 
-html {
-  margin: 0px;
-}
-
-body {
-  margin: 0px;
-}
-
-p {
-  color: black;
-}
-
-.formContainer button {
-  display: inline;
-  height: 45px;
-  width: 45px;
-  border: 4px solid #75A681;
-  background: white;
-}
-.formContainer button:hover {
-  background-color: #75A681;
-  color: white;
-}
-.formContainer .submitButtonStyle {
-  border: solid #75A681 4px;
-  height: 45px;
-  background: white;
-}
-.formContainer .submitButtonStyle:hover {
-  background-color: #75A681;
-  color: white;
-}
-.formContainer form {
-  top: 1px;
-  position: relative;
-  height: 45px;
-  display: inline-flex;
-}
-.formContainer form .quantityValue {
-  width: 45px;
-  text-align: center;
-  border-right: none;
-  border: solid #75A681 4px;
-  font-size: 16px;
-}
-
 footer {
   width: 100%;
   background-color: #75A681;
@@ -158,4 +91,32 @@ footer .footerContainer .footerContainerLists ul li {
   padding: 2.5px 0px;
   color: white;
   font-size: 14px;
-}/*# sourceMappingURL=product_page.css.map */
+}
+
+body {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .aboutContainer {
+  width: 100%;
+}
+body .aboutContainer .aboutContainerItem {
+  margin: 25px 25px;
+  position: relative;
+  bottom: 60px;
+}
+body .aboutContainer .aboutContainerItem h2 {
+  font-family: "Roboto Mono", monospace;
+}
+body .aboutContainer .aboutContainerItem .aboutContainerInformation p {
+  font-family: "Lato", sans-serif;
+}
+body .aboutContainer .aboutContainerItem .aboutContainerInformation p a {
+  color: black;
+}
+body .aboutContainer .aboutContainerItem .aboutContainerInformation p a:hover {
+  color: #75A681;
+}/*# sourceMappingURL=about.css.map */

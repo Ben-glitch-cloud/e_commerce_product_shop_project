@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/assets/css/all.min.css">
+    <link rel="stylesheet" href="/public/assets/about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Mono:wght@100;400&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+    <body>
+        <nav>
+            <img src="../../public/assets/images/All_in_one_logo.png">
+            <ul>
+                <li><a href="/about">About us</a></li>
+                <li><a href="./">Products</a></li>
+                <% if(user_id === undefined) { %>
+                    <li><a href="./login">Sign in</a></li>
+                <% } else { %>
+                    <li>
+                        <form action="/logout/<%= user_id %>" method="get">
+                            <input type="submit" value="Logout"></input>
+                        </form>
+                    </li>
+                <% } %>
+                <% if(user_id !== undefined) { %>
+                    <li><a href="/basket"><i class="fa-sharp fa-solid fa-basket-shopping fa-lg"></i>
+                            <%= numeberOfItemsInBasket %></a>
+                    </li>
+                <% } %>
+            </ul>
+        </nav>
+        <div class="aboutContainer">
+            <div class="aboutContainerItem">
+            <h2>About</h2>
+                <div class="aboutContainerInformation">
+                    <p>The All For One e-commerce store is built off the <a href="https://fakestoreapi.com/" target="_blank">Fake Store API.</a></p>
+
+                    <p>A user such as yourself; can browse the various products from the API, search for specific product categories, look at a singular item in detail and login to a users profile to see their basket.</p>
+
+                    <p>As a consequence of using a restful API, sending post requests would not manipulate the database used by <a href="https://fakestoreapi.com/docs" target="_blank">Fake Store API</a>.  This means that any changes made by the user would not be permanent. To resolve this issue, <a href="https://expressjs.com/en/resources/middleware/cookie-parser.html" target="_blank">express-cookies</a> has been used to temporarily store edited data from a shopping basket.</p>
+
+                    <p>Now a user such as yourself can; add items to a shopping basket, delete items from a shopping basket, edits the number of items in a shopping basket and delete quantities of items from a shopping basket. </p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footerContainer">
+                <h2>All For One</h2>
+                <div class="footerContainerLists">
+                <div class="footerInfoList">
+                    <ul>
+                        <li class="footerListHeader">About Us</li>
+                        <li>Our Mission</li>
+                        <li>Are Products</li>
+                        <li>Future Plans</li>
+                    </ul>
+                </div>
+                <div class="footerInfoList">
+                    <ul>
+                        <li class="footerListHeader">Products</li>
+                        <li>Woman's Clothing</li>
+                        <li>Men's Clothing</li>
+                        <li>Jewelery</li>
+                        <li>Electronics</li>
+                    </ul>
+                </div>
+                <div class="footerInfoList">
+                    <ul>
+                        <li class="footerListHeader">Help</li>
+                        <li>Help Center</li>
+                        <li>Community Guildelines</li>
+                        <li>Terms and Conditions</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </footer>
+    </body>
+</html>
