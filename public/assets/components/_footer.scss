@@ -1,0 +1,42 @@
+footer{
+    width: 100%;
+    background-color: $main-green-colour;
+
+    .footerContainer{
+        margin: 0px 25px;
+        padding: 25px 0px;
+
+        h2{
+            font-family: $base-headings;
+            margin: 0px;
+            padding: 0px;
+            color: white;
+        }
+
+        .footerContainerLists{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 10px;
+
+            ul{
+                margin: 0px;
+                padding: 0px;
+
+                .footerListHeader{
+                    font-size: 18px;
+                    text-decoration: underline;
+                    margin-bottom: 5px;
+                }
+
+                li{
+                    list-style: none;
+                    font-family: $base-front;
+                    padding: 2.5px 0px;
+                    color: white;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

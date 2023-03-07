@@ -114,4 +114,41 @@ p {
   border-right: none;
   border: solid #75A681 4px;
   font-size: 16px;
+}
+
+footer {
+  width: 100%;
+  background-color: #75A681;
+}
+footer .footerContainer {
+  margin: 0px 25px;
+  padding: 25px 0px;
+}
+footer .footerContainer h2 {
+  font-family: "Roboto Mono", monospace;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+}
+footer .footerContainer .footerContainerLists {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+footer .footerContainer .footerContainerLists ul {
+  margin: 0px;
+  padding: 0px;
+}
+footer .footerContainer .footerContainerLists ul .footerListHeader {
+  font-size: 18px;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+footer .footerContainer .footerContainerLists ul li {
+  list-style: none;
+  font-family: "Lato", sans-serif;
+  padding: 2.5px 0px;
+  color: white;
+  font-size: 14px;
 }/*# sourceMappingURL=product_page.css.map */
