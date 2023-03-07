@@ -24,11 +24,11 @@
                     </form>
                 </li>
             <% } %>
+            <% if(user_id !== undefined) { %>
             <li><a href="/basket"><i class="fa-sharp fa-solid fa-basket-shopping fa-lg"></i>
-                <% if(user_id !== undefined) { %>
                     <%= numeberOfItemsInBasket %></a>
-                <% } %>
             </li>
+            <% } %>
         </ul>
     </nav>
     <div class="product_layout_page">
@@ -42,7 +42,6 @@
             <% if(user_id !== undefined) {%>
             
              <div class="formContainer">
-                
                     <form action="/add_product_to_basket/<%= product_data['id'] %>" method="post">
                         <button onclick="addItem(); return false;"><i class="fa-sharp fa-solid fa-plus fa-xl"></i></button>
                         <input value="1" class='quantityValue' id="<%= product_data['id']%>" name="product_puantity" type="number" min="1" max="100">
@@ -50,8 +49,6 @@
                         <input class="submit<%= product_data['productId'] %> submitButtonStyle" type="submit" value="Add to basket">
                     </form>
                     
-                
-                
                 <% } %>
             </div>   
         </div>

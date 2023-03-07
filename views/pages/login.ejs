@@ -4,17 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/assets/css/all.min.css">
+    <link rel="stylesheet" href="/public/assets/login.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Mono:wght@100;400&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    
-    <h2>Login</h2>
-    <form action="/userlogin" method="post">
-        <label>User name</label>
-        <input type="text" name="username">
-        <label>Password</label>
-        <input type="text" name="password">
-        <input type="submit" value="Submit">
-    </form>
+    <nav>
+        <a href="/"><i class="fa-sharp fa-solid fa-arrow-left fa-2xl"></i></a>
+        <img src="../../public/assets/images/All_in_one_logo.png">
+    </nav>
+    <div class="mainLoginPage">
+        <div class="imageContainer">
+            <img src="../../public/assets/images/pexels-photo-13131123.jpeg">
+        </div>  
+        <div class="loginContainer">
+            <h2>Login</h2>
+                <form action="/userlogin" method="post">
+                    <input placeholder="User name" type="text" name="username">
+                    <input placeholder="Password" type="text" name="password">
+                    <input class="submit" type="submit" value="Login">
+                </form>
+                <% if(errorMessage !== undefined) {%>
+                    <div class="errorContainer">
+                        <i class="fa-sharp fa-solid fa-circle-exclamation fa-xl"></i>
+                        <p class="errorMessage"><%= errorMessage %></p>
+                    </div>
+                <% }%>
+        </div>
+    </div>
+    <footer>
+        <div class="footerContainer">
+            <h2>All For One</h2>
+            <div class="footerContainerLists">
+            <div class="footerInfoList">
+                <ul>
+                    <li class="footerListHeader">About Us</li>
+                    <li>Our Mission</li>
+                    <li>Are Products</li>
+                    <li>Future Plans</li>
+                </ul>
+            </div>
+            <div class="footerInfoList">
+                <ul>
+                    <li class="footerListHeader">Products</li>
+                    <li>Woman's Clothing</li>
+                    <li>Men's Clothing</li>
+                    <li>Jewelery</li>
+                    <li>Electronics</li>
+                </ul>
+            </div>
+            <div class="footerInfoList">
+                <ul>
+                    <li class="footerListHeader">Help</li>
+                    <li>Help Center</li>
+                    <li>Community Guildelines</li>
+                    <li>Terms and Conditions</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </footer>
 </body>
 </html>

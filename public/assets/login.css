@@ -1,0 +1,133 @@
+html {
+  margin: 0px;
+}
+
+body {
+  margin: 0px;
+}
+
+p {
+  color: black;
+}
+
+footer {
+  width: 100%;
+  background-color: #75A681;
+}
+footer .footerContainer {
+  margin: 0px 25px;
+  padding: 25px 0px;
+}
+footer .footerContainer h2 {
+  font-family: "Roboto Mono", monospace;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+}
+footer .footerContainer .footerContainerLists {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 180px;
+       column-gap: 180px;
+  margin-top: 10px;
+}
+footer .footerContainer .footerContainerLists ul {
+  margin: 0px;
+  padding: 0px;
+}
+footer .footerContainer .footerContainerLists ul .footerListHeader {
+  font-size: 18px;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+footer .footerContainer .footerContainerLists ul li {
+  list-style: none;
+  font-family: "Lato", sans-serif;
+  padding: 2.5px 0px;
+  color: white;
+  font-size: 14px;
+}
+
+nav {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+nav img {
+  width: 5%;
+}
+nav a i {
+  color: #B7A6E0;
+}
+nav a i:hover {
+  color: #75A681;
+}
+
+.mainLoginPage {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 600px;
+}
+.mainLoginPage .imageContainer {
+  height: inherit;
+  width: 60%;
+}
+.mainLoginPage .imageContainer img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: inherit;
+}
+.mainLoginPage .loginContainer {
+  display: flex;
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mainLoginPage .loginContainer h2 {
+  font-family: "Roboto Mono", monospace;
+}
+.mainLoginPage .loginContainer .errorContainer {
+  text-align: center;
+  padding: 10px 0px;
+}
+.mainLoginPage .loginContainer .errorContainer i {
+  color: red;
+}
+.mainLoginPage .loginContainer .errorContainer .errorMessage {
+  font-family: "Lato", sans-serif;
+  color: red;
+  padding: 2px 0px;
+  margin: 0px;
+}
+.mainLoginPage .loginContainer form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mainLoginPage .loginContainer form input {
+  height: 30px;
+  width: 180px;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  margin: 10px 0px;
+  border: 4px solid #75A681;
+}
+.mainLoginPage .loginContainer form .submit {
+  background-color: #75A681;
+  color: white;
+  width: 192px;
+}
+.mainLoginPage .loginContainer form .submit:hover {
+  background-color: white;
+  color: #75A681;
+}/*# sourceMappingURL=login.css.map */

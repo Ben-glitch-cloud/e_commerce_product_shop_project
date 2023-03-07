@@ -24,11 +24,11 @@
                     </form>
                 </li>
             <% } %>
-            <li><a href="./basket"><i class="fa-sharp fa-solid fa-basket-shopping fa-lg"></i>
-                <% if(user_id !== undefined) { %>
-                    <%= numeberOfItemsInBasket %></a>
-                <% } %>
-            </li>
+            <% if(user_id !== undefined) { %>
+                <li><a href="/basket"><i class="fa-sharp fa-solid fa-basket-shopping fa-lg"></i>
+                        <%= numeberOfItemsInBasket %></a>
+                </li>
+            <% } %>
         </ul>
     </nav>
     <div class="basket_container">
@@ -42,7 +42,7 @@
                 <div class="inner_Basket_checkout">
                     <p>Discount none</p>
                     <p>Shipping Price £5.00</p>
-                    <p>Total Price <%= basket_list.reduce((a, b) => a + (b['productData']['price'] * b['quantity']), 0) %></p>
+                    <p>Total Price £<%= basket_list.reduce((a, b) => a + (b['productData']['price'] * b['quantity']), 0) %></p>
                     <button>Check Out</button>
                 </div>
             </div>

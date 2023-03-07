@@ -16,7 +16,7 @@ footer{
         .footerContainerLists{
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            column-gap: 180px;
             margin-top: 10px;
 
             ul{

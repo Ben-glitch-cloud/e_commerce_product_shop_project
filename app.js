@@ -49,7 +49,7 @@ app.post('/', async function (req, res){
 })
 
 app.get('/login', function(req, res){
-    res.render('pages/login')
+    res.render('pages/login', {errorMessage: undefined})
 })
 
 app.get('/basket', async function(req, res){
@@ -103,7 +103,7 @@ app.post('/userlogin', async function (req, res){
         res.cookie('user_basket', basket_user_data_only_id)
         res.redirect('/')
     } else {
-        res.render('pages/login')
+        res.render('pages/login', {errorMessage: 'Sorry, username or password is incorrect'})
     }
 })
 

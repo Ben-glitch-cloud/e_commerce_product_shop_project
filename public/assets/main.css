@@ -208,7 +208,8 @@ footer .footerContainer h2 {
 footer .footerContainer .footerContainerLists {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  -moz-column-gap: 180px;
+       column-gap: 180px;
   margin-top: 10px;
 }
 footer .footerContainer .footerContainerLists ul {
