@@ -40,14 +40,34 @@
             <p>Rating : <%= product_data['rating']['rate'] %></p>
             <p>Number of ratings <%= product_data['rating']['count'] %></p>
             <% if(user_id !== undefined) {%>
-            <form action="/add_product_to_basket/<%= product_data['id'] %>" method="post">
-                <button>-</button>
-                <input name="product_puantity" type="number" min="1" value="1">
-                <button>+</button>
-                <button type="submit" value="Submit">Add to busket</button>
-            </form> 
-            <% } %>
+            
+             <div class="formContainer">
+                
+                    <form action="/add_product_to_basket/<%= product_data['id'] %>" method="post">
+                        <button onclick="addItem(); return false;"><i class="fa-sharp fa-solid fa-plus fa-xl"></i></button>
+                        <input value="1" class='quantityValue' id="<%= product_data['id']%>" name="product_puantity" type="number" min="0" max="100">
+                        <button onclick="reduceItem(); return false;"><i class="fa-sharp fa-solid fa-minus fa-xl"></i></button>
+                        <input class="submit<%= product_data['productId'] %> submitButtonStyle" type="submit" value="Add to basket">
+                    </form>
+                    
+                
+                
+                <% } %>
+            </div>   
         </div>
     </div>
 </body>
+    <script>
+
+        function addItem(){
+            document.querySelector('.quantityValue').value++
+        }
+
+        function reduceItem(){
+            if(document.querySelector('.quantityValue').value > 0){
+                document.querySelector('.quantityValue').value--
+            }
+        }
+
+    </script>
 </html>

@@ -80,4 +80,38 @@ body {
 
 p {
   color: black;
+}
+
+.formContainer button {
+  display: inline;
+  height: 45px;
+  width: 45px;
+  border: 4px solid #75A681;
+  background: white;
+}
+.formContainer button:hover {
+  background-color: #75A681;
+  color: white;
+}
+.formContainer .submitButtonStyle {
+  border: solid #75A681 4px;
+  height: 45px;
+  background: white;
+}
+.formContainer .submitButtonStyle:hover {
+  background-color: #75A681;
+  color: white;
+}
+.formContainer form {
+  top: 1px;
+  position: relative;
+  height: 45px;
+  display: inline-flex;
+}
+.formContainer form .quantityValue {
+  width: 45px;
+  text-align: center;
+  border-right: none;
+  border: solid #75A681 4px;
+  font-size: 16px;
 }/*# sourceMappingURL=product_page.css.map */
