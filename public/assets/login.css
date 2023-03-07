@@ -130,4 +130,14 @@ nav a i:hover {
 .mainLoginPage .loginContainer form .submit:hover {
   background-color: white;
   color: #75A681;
+}
+.mainLoginPage .loginContainer form .feelingLucky {
+  background-color: #B7A6E0;
+  color: white;
+  width: 192px;
+  border: 4px solid #B7A6E0;
+}
+.mainLoginPage .loginContainer form .feelingLucky:hover {
+  background-color: white;
+  color: #B7A6E0;
 }/*# sourceMappingURL=login.css.map */
