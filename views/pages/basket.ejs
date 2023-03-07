@@ -42,7 +42,7 @@
                 <div class="inner_Basket_checkout">
                     <p>Discount none</p>
                     <p>Shipping Price £5.00</p>
-                    <p>Total Price £<%= basket_list.reduce((a, b) => a + (b['productData']['price'] * b['quantity']), 0) %></p>
+                    <p>Total Price £<%= basket_list.reduce((a, b) => a + (b['productData']['price'] * b['quantity']), 0).toFixed(2) %></p>
                     <button>Check Out</button>
                 </div>
             </div>

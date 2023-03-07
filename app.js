@@ -93,6 +93,19 @@ app.get('/logout/:id', function(req, res){
     res.redirect('/')
 })
 
+app.post('/userlogin/random', async function(req, res){
+    let user_result = await users.getRandomUser()
+    console.log(user_result)
+    if(user_result !== undefined){
+        res.cookie('user_id', user_result)
+        let basket_user_data_only_id = await basket.getUserBasket(user_result)
+        res.cookie('user_basket', basket_user_data_only_id)
+        res.redirect('/')
+    } else {
+        res.render('pages/login', {errorMessage: 'Sorry, something went wrong with the login:)'})
+    }
+})
+
 app.post('/userlogin', async function (req, res){
     let user_result = await users.userLoginVerification(req.body.username, req.body.password), basket_user_data_only_id
     if(user_result !== undefined){

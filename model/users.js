@@ -17,4 +17,16 @@ export default class Users{
             console.log(error)
         }
     }
+
+    async getRandomUser(){
+        let user_data
+        try{
+            await fetch('https://fakestoreapi.com/users').then(res => res.json()).then(data => user_data = data)
+            let listResult = Math.floor(Math.random() * (0, user_data.length - 1))
+            let userResult = user_data[listResult]
+            return userResult['id']
+        }catch(error){
+            console.log(error)
+        }
+    }
 }
