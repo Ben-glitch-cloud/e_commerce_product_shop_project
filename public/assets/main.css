@@ -232,6 +232,13 @@ nav img {
 .product_section .product_section_container_header_form h2 {
   font-family: "Roboto Mono", monospace;
 }
+@media only screen and (max-width: 750px) {
+  .product_section .product_section_container_header_form {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+}
 
 footer {
   width: 100%;

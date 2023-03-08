@@ -1,4 +1,5 @@
 @import '../core/variables';
+@import '../core/media_query';
 
 .product_section{
     width: 100%;
@@ -63,5 +64,13 @@
          }
     }
 
+    @media only screen and (max-width: $media_query_large_tablet) {
+
+        .product_section_container_header_form{
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
     
+    }
 }

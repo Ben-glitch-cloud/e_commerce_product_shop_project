@@ -57,7 +57,10 @@
     </nav>
     <div class="product_container">
     <div class="product_layout_page">
-        <img src="<%= product_data['image']%>" alt="product_image">
+        <div class="product_image_container">
+            <img src="<%= product_data['image']%>" alt="product_image">
+        </div>
+        
         <div class="product_info">
             <h2><%= product_data['title'] %></h2>
             <p><%= product_data['description'] %></p>

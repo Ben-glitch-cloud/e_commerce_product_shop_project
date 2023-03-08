@@ -1,16 +1,22 @@
 @import '../core/variables';
+@import '../core/media_query';
 
 .product_container{
 
-    margin: 0px 25px;
+    margin: 25px 25px;
 
     .product_layout_page{
         display: flex;
         flex-direction: row;
 
-        img{
-        width: 600px;
-        height: 600px;
+        .product_image_container{
+
+            width: 90%;
+
+            img{
+                width: 100%;
+                object-fit: contain;
+            }
         }
 
         .product_info{
@@ -27,4 +33,47 @@
 
         }
     }
+
 }
+
+@media only screen and (max-width: $media_query_mediam_CP){
+    .product_container{
+
+        .product_layout_page{
+
+            .product_image_container{
+
+                width: 110%;
+
+
+                img{
+                   object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $media_query_large_tablet){
+    .product_container{
+
+        .product_layout_page{
+
+            flex-direction: column;
+
+            .product_image_container{
+
+                display: flex;
+                justify-content: center;
+                width: 100%;
+
+                img{
+                    width: 50%;
+                }
+
+            }
+            
+        }
+    }
+}
+
