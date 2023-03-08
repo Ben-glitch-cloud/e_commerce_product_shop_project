@@ -158,4 +158,21 @@ footer .footerContainer .footerContainerLists ul li {
   padding: 2.5px 0px;
   color: white;
   font-size: 14px;
+}
+
+@media only screen and (max-width: 900px) {
+  .footerContainerLists {
+    -moz-column-gap: 0px !important;
+         column-gap: 0px !important;
+    justify-content: space-between !important;
+  }
+  .footerContainerLists .footerInfoList {
+    width: 147px;
+    flex-grow: 1;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .footerContainerLists {
+    flex-wrap: wrap;
+  }
 }/*# sourceMappingURL=product_page.css.map */

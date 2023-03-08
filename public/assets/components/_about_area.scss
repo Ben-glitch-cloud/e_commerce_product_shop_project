@@ -8,11 +8,14 @@ body{
     .aboutContainer{
 
         width: 100%;
-
+        
         .aboutContainerItem{
-            margin: 25px 25px;
-            position: relative;
-            bottom: 60px;
+            margin: 0px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            
 
             h2{
                 font-family: $base-headings;

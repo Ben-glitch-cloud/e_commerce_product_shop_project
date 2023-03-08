@@ -93,6 +93,22 @@ footer .footerContainer .footerContainerLists ul li {
   font-size: 14px;
 }
 
+@media only screen and (max-width: 900px) {
+  .footerContainerLists {
+    -moz-column-gap: 0px !important;
+         column-gap: 0px !important;
+    justify-content: space-between !important;
+  }
+  .footerContainerLists .footerInfoList {
+    width: 147px;
+    flex-grow: 1;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .footerContainerLists {
+    flex-wrap: wrap;
+  }
+}
 body {
   display: flex;
   width: 100%;
@@ -104,9 +120,11 @@ body .aboutContainer {
   width: 100%;
 }
 body .aboutContainer .aboutContainerItem {
-  margin: 25px 25px;
-  position: relative;
-  bottom: 60px;
+  margin: 0px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 body .aboutContainer .aboutContainerItem h2 {
   font-family: "Roboto Mono", monospace;
