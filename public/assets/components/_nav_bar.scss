@@ -1,5 +1,6 @@
 @import '../core/variables';
 @import '../global_style/global_style_page';
+@import '../core/media_query';
 
 nav{
     width: 100%;
@@ -12,6 +13,51 @@ nav{
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     margin-bottom: 15px;
+
+    .dropDownContainer{
+        display: none;
+        margin-right: 5px;
+        position: relative;
+
+        .fa-bars{
+            padding: 10px 0px;
+        }
+
+        .dropDownListOpation{
+            display: none;
+            position: absolute;
+            right: 0px;
+            top: -10px;
+            z-index: 1;
+            width: 200px;
+            height: auto;
+            margin: 0px;
+            padding: 10px;
+            background-color: $main-grey;
+
+            .dropDownLink{
+                display: block;
+                padding: 2.5px 0px;
+                font-size: 22px;
+
+                input{
+                    margin: 0px;
+                    padding: 0px;
+                    background: $main-grey;
+                    font-size: 22px;
+                }
+            }
+           
+        }
+
+        &:hover .dropDownListOpation{
+            display: block;
+        }
+
+
+    }
+
+    
 
     ul{
         margin: 0px 20px;
@@ -47,6 +93,18 @@ nav{
     }
 
     img{
-        width: 5%;
+        width: 60px;
     }
+}
+
+@media only screen and (max-width: $media_query_large_tablet) {
+
+    ul{
+        display: none;
+    }
+    
+    .dropDownContainer{
+        display: block !important;
+    }
+
 }

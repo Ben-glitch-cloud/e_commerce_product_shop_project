@@ -43,6 +43,40 @@ nav {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   margin-bottom: 15px;
 }
+nav .dropDownContainer {
+  display: none;
+  margin-right: 5px;
+  position: relative;
+}
+nav .dropDownContainer .fa-bars {
+  padding: 10px 0px;
+}
+nav .dropDownContainer .dropDownListOpation {
+  display: none;
+  position: absolute;
+  right: 0px;
+  top: -10px;
+  z-index: 1;
+  width: 200px;
+  height: auto;
+  margin: 0px;
+  padding: 10px;
+  background-color: #F2F1F0;
+}
+nav .dropDownContainer .dropDownListOpation .dropDownLink {
+  display: block;
+  padding: 2.5px 0px;
+  font-size: 22px;
+}
+nav .dropDownContainer .dropDownListOpation .dropDownLink input {
+  margin: 0px;
+  padding: 0px;
+  background: #F2F1F0;
+  font-size: 22px;
+}
+nav .dropDownContainer:hover .dropDownListOpation {
+  display: block;
+}
 nav ul {
   margin: 0px 20px;
   padding: 0px;
@@ -73,9 +107,17 @@ nav ul :hover {
   color: #FFB1DB;
 }
 nav img {
-  width: 5%;
+  width: 60px;
 }
 
+@media only screen and (max-width: 750px) {
+  ul {
+    display: none;
+  }
+  .dropDownContainer {
+    display: block !important;
+  }
+}
 html {
   margin: 0px;
 }

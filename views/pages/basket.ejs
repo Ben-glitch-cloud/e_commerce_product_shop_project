@@ -30,6 +30,30 @@
                 </li>
             <% } %>
         </ul>
+        <div class="dropDownContainer">
+            <i class="fa-sharp fa-solid fa-bars fa-2xl"></i>
+        
+            <div class="dropDownList">
+                <ul class="dropDownListOpation">
+                    <li class="dropDownLink"><a href="/about">About us</a></li>
+                    <li class="dropDownLink"><a href="./">Products</a></li>
+                    <% if(user_id === undefined) { %>
+                        <li class="dropDownLink"><a href="./login">Sign in</a></li>
+                    <% } else { %>
+                        <li class="dropDownLink">
+                            <form action="/logout/<%= user_id %>" method="get">
+                                <input class="logoutDropDown" type="submit" value="Logout"></input>
+                            </form>
+                        </li>
+                    <% } %>
+                    <% if(user_id !== undefined) { %>
+                        <li class="dropDownLink"><a href="/basket"><i class="fa-sharp fa-solid fa-basket-shopping fa-lg"></i>
+                                <%= numeberOfItemsInBasket %></a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
     </nav>
     <div class="basket_container">
         <% if(user_id === undefined) { %>
