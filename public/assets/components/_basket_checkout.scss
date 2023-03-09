@@ -1,4 +1,11 @@
 
+body{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 @mixin top_basket_list{
     display: flex;
     flex-direction: row;

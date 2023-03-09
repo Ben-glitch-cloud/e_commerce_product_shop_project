@@ -193,13 +193,13 @@ nav img {
 .basket_container .basket_message p {
   margin: 5px 0px;
   padding: 0px;
+  font-family: "Lato", sans-serif;
 }
 
 .basket_list_container {
   display: flex;
   flex-direction: column;
   margin: 20px 25px;
-  padding-bottom: 20px;
   background-color: lightgray;
 }
 .basket_list_container .basket_item {
@@ -208,7 +208,7 @@ nav img {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin: 20px 20px 0px 20px;
+  margin: 20px 20px 20px 20px;
 }
 @media only screen and (max-width: 800px) {
   .basket_list_container .basket_item {
@@ -373,6 +373,13 @@ nav img {
   border: none;
   color: red;
   cursor: pointer;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .basket_checkout {

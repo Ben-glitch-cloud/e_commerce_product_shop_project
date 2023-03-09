@@ -67,6 +67,7 @@
             <p>Price £<%= product_data['price'].toFixed(2) %></p>
 
             <div class="rating_product_container">
+                <p>Rating </p>
                 <% for(let i = 0; i < Math.round(product_data['rating']['rate']); i++ ) { %>
                     <i class="fa-sharp fa-solid fa-star" style="color: #75A681;"></i>
                 <% } %>

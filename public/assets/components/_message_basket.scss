@@ -3,7 +3,7 @@
 .basket_container{
 
     width: 100%;
-
+    
     .basket_message{
         height: 120px;
         margin: 50px 30px;
@@ -17,6 +17,7 @@
         p{
             margin: 5px 0px;
             padding: 0px;
+            font-family: $base-front;
         }
     }
 
