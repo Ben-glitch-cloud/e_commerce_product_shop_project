@@ -47,23 +47,26 @@ footer .footerContainer .footerContainerLists ul li {
   color: white;
   font-size: 14px;
 }
-
 @media only screen and (max-width: 900px) {
-  .footerContainerLists {
-    -moz-column-gap: 0px !important;
-         column-gap: 0px !important;
-    justify-content: space-between !important;
+  footer .footerContainer .footerContainerLists {
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+    justify-content: space-between;
   }
-  .footerContainerLists .footerInfoList {
+  footer .footerContainer .footerContainerLists .footerInfoList {
     width: 147px;
     flex-grow: 1;
   }
+  footer .footerContainer .footerContainerLists .footerInfoList ul {
+    display: block;
+  }
 }
 @media only screen and (max-width: 500px) {
-  .footerContainerLists {
+  footer .footerContainer .footerContainerLists {
     flex-wrap: wrap;
   }
 }
+
 nav {
   width: 100%;
   height: 100px;

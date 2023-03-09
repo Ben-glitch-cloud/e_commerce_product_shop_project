@@ -7,6 +7,7 @@ footer{
     .footerContainer{
         margin: 0px 25px;
         padding: 25px 0px;
+        
 
         h2{
             font-family: $base-headings;
@@ -40,29 +41,37 @@ footer{
                 }
             }
         }
-    }
-}
 
-@media only screen and (max-width: $media_query_small_CP) {
+        @media only screen and (max-width: $media_query_small_CP) {
     
-        .footerContainerLists{
-            column-gap: 0px !important;
-            justify-content: space-between !important;
+            .footerContainerLists{
+                column-gap: 0px;
+                justify-content: space-between;
+    
+                .footerInfoList{
+                    width: 147px;
+                    flex-grow: 1;
 
-            .footerInfoList{
-                width: 147px;
-                flex-grow: 1;
+                    ul{
+                        display: block;
+                    }
+                }
             }
-        }
-}
-
-@media only screen and (max-width: $media_query_large_phone) {
-
-    .footerContainerLists{
-        flex-wrap: wrap;
     }
 
+    @media only screen and (max-width: $media_query_large_phone) {
+
+        .footerContainerLists{
+            flex-wrap: wrap;
+        }
+    
+    }
+    }
 }
+
+
+
+
 
 
 

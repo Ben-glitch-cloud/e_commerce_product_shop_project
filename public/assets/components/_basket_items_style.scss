@@ -29,6 +29,7 @@
 
         .basket_item_container{
             width: 100%;
+            box-sizing: border-box;
 
             .basket_item_data{
                 display: flex;
@@ -46,9 +47,10 @@
                 .basket_information{
                     margin: 0px;
                     padding: 0px;
+                    width: 100%;
+
                     h2{
                         font-family: $base-front;
-                        overflow: hidden;
                     }
 
                     p{
@@ -100,6 +102,7 @@
                 .basket_navigation{
                     display: flex;
                     width: 0px;
+                    z-index: 1;
                     animation-name: noanimation;
                     animation-duration: 1s;
                     animation-timing-function: ease;
@@ -141,5 +144,9 @@
         } 
 
     } 
+    
+}
+
+@media only screen and (max-width: $media_query_xlarge_tablet) {
     
 }

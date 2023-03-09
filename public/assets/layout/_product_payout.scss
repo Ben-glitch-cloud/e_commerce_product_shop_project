@@ -4,6 +4,8 @@
 .product_container{
 
     margin: 25px 25px;
+    display: block;
+    min-height: 350px;
 
     .product_layout_page{
         display: flex;
@@ -43,8 +45,7 @@
 
             .product_image_container{
 
-                width: 110%;
-
+                min-width: 240px;
 
                 img{
                    object-fit: contain;
