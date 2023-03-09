@@ -391,6 +391,11 @@ nav img {
   -moz-column-gap: 20px;
        column-gap: 20px;
 }
+@media only screen and (max-width: 650px) {
+  .basket_checkout .inner_Basket_checkout {
+    display: block;
+  }
+}
 .basket_checkout .inner_Basket_checkout p {
   font-family: "Lato", sans-serif;
   font-size: 16px;
@@ -406,7 +411,6 @@ nav img {
   background: #75A681;
   color: white;
 }
-
 .basket_checkout_bottom {
   display: flex;
   flex-direction: row;
@@ -422,6 +426,11 @@ nav img {
   align-items: center;
   -moz-column-gap: 20px;
        column-gap: 20px;
+}
+@media only screen and (max-width: 650px) {
+  .basket_checkout_bottom .inner_Basket_checkout {
+    display: block;
+  }
 }
 .basket_checkout_bottom .inner_Basket_checkout p {
   font-family: "Lato", sans-serif;

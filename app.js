@@ -33,7 +33,6 @@ let basket = new Basket();
 
 app.get('/', async function (req, res) {
     res.render('pages/index', {products_data: await product_models.getAllProducts(), categorie_data: await product_models.getAllProductCategories(), user_id: req.cookies.user_id, categorie_name: 'All Products', numeberOfItemsInBasket: await basket.numberOfItemsInBasket(req.cookies['user_id'], req.cookies.user_basket)});
-    // apply this method to other navigations
 })
 
 app.get('/about', async function (req, res) {
@@ -72,8 +71,6 @@ app.get('/basket', async function(req, res){
         if(res.cookie.user_basket === undefined ){
             res.cookie('user_basket', basket_user_data_only_id)
         } 
-
-        console.log(basket_user_data_only_id, 'this basket')
         
         if(basket_user_data_only_id.length === 0){
             res.render('pages/basket', {user_id: req.cookies['user_id'], basket_list: [], numeberOfItemsInBasket: await basket.numberOfItemsInBasket(req.cookies['user_id'], req.cookies.user_basket)})

@@ -13,6 +13,10 @@
         align-items: center;
         column-gap: 20px;
 
+        @media only screen and (max-width: $media_query_mediam_tablet) {
+            display: block;
+        }
+
         p{
             font-family: $base-front;
             font-size: 16px;
@@ -32,8 +36,16 @@
     }
 }
 
+
+
+
 .basket_checkout{
     @include top_basket_list;
+
+    @media only screen and (max-width: $media_query_mediam_tablet) {
+        
+    }
+
     margin: 0px 25px;
 }
 
