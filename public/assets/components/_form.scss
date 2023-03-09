@@ -5,7 +5,6 @@
         display: inline;
         height: 45px;
         width: 45px;
-        border: 4px solid $main-green-colour;
         background: white;
 
         &:hover{
@@ -14,9 +13,33 @@
         }
     }
 
+    .quantityValue{
+        border-left: none;
+        border-right: none;
+        border-top: 4px solid $main-green-colour;
+        border-bottom: 4px solid $main-green-colour;
+        text-align: center;
+        
+    }
+
+    .addItem{
+        border-left: 4px solid $main-green-colour;
+        border-right: none;
+        border-top: 4px solid $main-green-colour;
+        border-bottom: 4px solid $main-green-colour;
+    }
+
+    .reduceItem{
+        border-left: none;
+        border-right: 4px solid $main-green-colour;
+        border-top: 4px solid $main-green-colour;
+        border-bottom: 4px solid $main-green-colour;
+    }
+
     .submitButtonStyle{
         border: solid $main-green-colour 4px;
         height: 45px;
+        margin-left: 30px;
         
         background: white;
         &:hover{
@@ -36,8 +59,6 @@
             width: 45px;
             text-align: center;
             border-right: none;
-            border: solid $main-green-colour 4px;
-           
             font-size: 16px;
         }
 

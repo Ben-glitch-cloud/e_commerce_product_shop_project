@@ -168,16 +168,35 @@ p {
   display: inline;
   height: 45px;
   width: 45px;
-  border: 4px solid #75A681;
   background: white;
 }
 .formContainer button:hover {
   background-color: #75A681;
   color: white;
 }
+.formContainer .quantityValue {
+  border-left: none;
+  border-right: none;
+  border-top: 4px solid #75A681;
+  border-bottom: 4px solid #75A681;
+  text-align: center;
+}
+.formContainer .addItem {
+  border-left: 4px solid #75A681;
+  border-right: none;
+  border-top: 4px solid #75A681;
+  border-bottom: 4px solid #75A681;
+}
+.formContainer .reduceItem {
+  border-left: none;
+  border-right: 4px solid #75A681;
+  border-top: 4px solid #75A681;
+  border-bottom: 4px solid #75A681;
+}
 .formContainer .submitButtonStyle {
   border: solid #75A681 4px;
   height: 45px;
+  margin-left: 30px;
   background: white;
 }
 .formContainer .submitButtonStyle:hover {
@@ -194,7 +213,6 @@ p {
   width: 45px;
   text-align: center;
   border-right: none;
-  border: solid #75A681 4px;
   font-size: 16px;
 }
 

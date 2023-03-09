@@ -16,6 +16,13 @@
         justify-content: flex-start;
         margin: 20px 20px 0px 20px;
 
+        @media only screen and (max-width: $media_query_xlarge_tablet) {
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
 
         .basket_image img{
             background-color: white;
@@ -31,6 +38,11 @@
             width: 100%;
             box-sizing: border-box;
 
+            @media only screen and (max-width: $media_query_xlarge_tablet) {
+                margin-bottom: 25px;
+            }
+
+        
             .basket_item_data{
                 display: flex;
                 flex-direction: row;
@@ -49,52 +61,96 @@
                     padding: 0px;
                     width: 100%;
 
+                    @media only screen and (max-width: $media_query_xlarge_tablet) {
+                       display: flex;
+                       flex-direction: column;
+                       align-items: center;
+                    }
+    
+
                     h2{
                         font-family: $base-front;
+                        @media only screen and (max-width: $media_query_xlarge_tablet) {
+                            margin: 0px;
+                            text-align: center;
+                         }
                     }
 
                     p{
                         font-family: $base-front;
                     }
-                    button{
-                        display: inline;
-                        height: 45px;
-                        width: 45px;
-                        border: 4px solid $main-green-colour;
-                        background: white;
 
-                        &:hover{
-                            background-color: $main-green-colour;
-                            color: white;
+                    .basket_navigation_delete_small_screen{
+
+                        display: none;
+                        margin-top: 15px;
+
+                        button{
+
+                            background-color: white;
+                            border: none;
+                            cursor: pointer;
+
+                            i{
+                                color: red;
+                            }
+                            
                         }
+
+                        @media only screen and (max-width: $media_query_xlarge_tablet) {
+                            display: block;
+                        }
+
                     }
 
-                    form{
-                        top: 1px;
-                        position: relative;
-                        height: 45px;
-                        display: inline-flex;
+                    .full_form_container{
 
-                        .submitButtonStyle{
-                            border-right: solid $main-green-colour 4px;
-                            border-left: none;
-                            border-top: solid $main-green-colour 4px;
-                            border-bottom: solid $main-green-colour 4px;
+                        display: flex;
+                        flex-direction: row;
+
+                        button{
+                            display: inline;
+                            height: 45px;
+                            width: 45px;
+                            border: 4px solid $main-green-colour;
                             background: white;
+
                             &:hover{
                                 background-color: $main-green-colour;
                                 color: white;
                             }
-                        } 
+                        }
 
-                        .quantityValue{
-                            width: 45px;
-                            text-align: center;
-                            border-right: none;
-                            border-top: solid $main-green-colour 4px;
-                            border-left: solid $main-green-colour 4px;
-                            border-bottom: solid $main-green-colour 4px;
-                            font-size: 16px;
+                    
+
+                        form{
+                            
+                            position: relative;
+                            height: 45px;
+                            display: inline-flex;
+                            flex-direction: row;
+
+                            .submitButtonStyle{
+                                border-right: solid $main-green-colour 4px;
+                                border-left: none;
+                                border-top: solid $main-green-colour 4px;
+                                border-bottom: solid $main-green-colour 4px;
+                                background: white;
+                                &:hover{
+                                    background-color: $main-green-colour;
+                                    color: white;
+                                }
+                            } 
+
+                            .quantityValue{
+                                width: 45px;
+                                text-align: center;
+                                border-right: none;
+                                border-top: solid $main-green-colour 4px;
+                                border-left: solid $main-green-colour 4px;
+                                border-bottom: solid $main-green-colour 4px;
+                                font-size: 16px;
+                            }
                         }
                     }
                 }
@@ -112,6 +168,10 @@
                     justify-content: center;
                     align-items: center;
                     background-color: $main-grey;
+
+                    @media only screen and (max-width: $media_query_xlarge_tablet) {
+                        display: none;
+                    }
 
                     @keyframes navBar {
                         from{
@@ -148,5 +208,5 @@
 }
 
 @media only screen and (max-width: $media_query_xlarge_tablet) {
-    
+       
 }
