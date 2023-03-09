@@ -1,7 +1,13 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
 .product_container {
   margin: 25px 25px;
   display: block;
-  min-height: 350px;
 }
 .product_container .product_layout_page {
   display: flex;
