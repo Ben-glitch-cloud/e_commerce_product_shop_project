@@ -191,6 +191,7 @@ p {
   border-top: 4px solid #75A681;
   border-bottom: 4px solid #75A681;
   text-align: center;
+  margin: 0px;
 }
 .formContainer .addItem {
   border-left: 4px solid #75A681;

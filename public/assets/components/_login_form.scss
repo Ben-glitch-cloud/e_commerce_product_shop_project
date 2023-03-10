@@ -1,8 +1,12 @@
+@import '../core/media_query';
+@import '../images/pexels-photo-13131123.jpeg';
+
 .mainLoginPage{
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 600px;
+
 
     .imageContainer{
         height: inherit;
@@ -77,4 +81,27 @@
         }
     }
 
+}
+
+@media only screen and (max-width: $media_query_xlarge_tablet){
+    .mainLoginPage{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url("../images/pexels-photo-13131123.jpeg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: none;
+
+        .imageContainer{
+            display: none;
+        }
+
+        .loginContainer{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            width: 280px;
+            padding-bottom: 20px;
+        }
+       
+    }
 }

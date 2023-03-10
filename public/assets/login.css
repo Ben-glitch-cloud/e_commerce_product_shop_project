@@ -1,3 +1,4 @@
+@import url();
 html {
   margin: 0px;
 }
@@ -159,4 +160,24 @@ nav a i:hover {
 .mainLoginPage .loginContainer form .feelingLucky:hover {
   background-color: white;
   color: #B7A6E0;
+}
+
+@media only screen and (max-width: 800px) {
+  .mainLoginPage {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/pexels-photo-13131123.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+  }
+  .mainLoginPage .imageContainer {
+    display: none;
+  }
+  .mainLoginPage .loginContainer {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 280px;
+    padding-bottom: 20px;
+  }
 }/*# sourceMappingURL=login.css.map */
