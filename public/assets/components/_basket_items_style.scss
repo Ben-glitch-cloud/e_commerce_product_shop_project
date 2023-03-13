@@ -111,7 +111,6 @@
                             display: inline;
                             height: 45px;
                             width: 45px;
-                            border: 4px solid $main-green-colour;
                             background: white;
 
                             &:hover{
@@ -120,6 +119,19 @@
                             }
                         }
 
+                        .add-button{
+                            border-left: 4px solid $main-green-colour;
+                            border-top: 4px solid $main-green-colour;
+                            border-bottom: 4px solid $main-green-colour;
+                            border-right: none;
+                        }
+
+                        .minus-button{
+                            border-right: 4px solid $main-green-colour;
+                            border-top: 4px solid $main-green-colour;
+                            border-bottom: 4px solid $main-green-colour;
+                            border-left: none;
+                        }
                     
 
                         form{
@@ -144,7 +156,6 @@
                             .quantityValue{
                                 width: 45px;
                                 text-align: center;
-                                
                                 border-right: none;
                                 border-top: solid $main-green-colour 4px;
                                 border-left: solid $main-green-colour 4px;

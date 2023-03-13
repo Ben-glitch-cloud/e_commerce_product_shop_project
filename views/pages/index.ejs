@@ -33,7 +33,6 @@
 
         <div class="dropDownContainer">
             <i class="fa-sharp fa-solid fa-bars fa-2xl"></i>
-        
             <div class="dropDownList">
                 <ul class="dropDownListOpation">
                     <li class="dropDownLink"><a href="/about">About us</a></li>
@@ -72,26 +71,26 @@
     </div>
     
     <div class="contaner_boreder">
-        <div class="contaner_product">
-            <% products_data.forEach((item) => { %>
-                <form action="/product/<%= item['id'] %>" method="get"> 
-                <button type="submit" value="Submit">
-                <div class="product_card">
-                    <img src="<%= item['image'] %>"> 
-                    <div class="product_card_info">
-                        <p id="item_header"><%= item['title'] %></p>
-                        <p>£ <%= item['price'].toFixed(2) %></p>
-                        <div class="rating_product_container">
-                            <% for(let i = 0; i < Math.round(item['rating']['rate']); i++ ) { %>
-                                <i class="fa-sharp fa-solid fa-star" style="color: #75A681;"></i>
-                            <% } %>
-                            <p id="number_of_ratings"><%= item['rating']['count'] %></p>
+            <div class="contaner_product">
+                <% products_data.forEach((item) => { %>
+                    <form action="/product/<%= item['id'] %>" method="get"> 
+                    <button type="submit" value="Submit">
+                    <div class="product_card">
+                        <img src="<%= item['image'] %>"> 
+                        <div class="product_card_info">
+                            <p id="item_header"><%= item['title'] %></p>
+                            <p>£ <%= item['price'].toFixed(2) %></p>
+                            <div class="rating_product_container">
+                                <% for(let i = 0; i < Math.round(item['rating']['rate']); i++ ) { %>
+                                    <i class="fa-sharp fa-solid fa-star" style="color: #75A681;"></i>
+                                <% } %>
+                                <p id="number_of_ratings"><%= item['rating']['count'] %></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                </button>
-                </form>
-            <%  }) %>
+                    </button>
+                    </form>
+                <%  }) %>
         </div>
     </div>
     <footer>

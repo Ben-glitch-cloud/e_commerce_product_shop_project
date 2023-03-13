@@ -7,83 +7,161 @@
     margin: 0px 25px;
     margin-bottom: 25px;
 
-.contaner_product{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    flex-direction: row;
-    flex-wrap: wrap;
-    row-gap: 25px;
-    column-gap: 15px;
-
-   
-    button{
-        background-color: white;
-        border: none;
-        padding: 0px;
-        text-align: left;
-
-    .product_card{
-
-        width: 200px;
+    .contaner_product{
+        // width: 100%;
+        display: grid;
         box-sizing: content-box;
-        box-shadow: rgba(69, 69, 92, 0.2) 0px 7px 29px 0px;
-        cursor: pointer;
-        overflow: hidden;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        row-gap: 25px;
+        column-gap: 10px;
+        justify-content: center;
+        margin: 0px 10px;
+
+        form{
+
+        display: flex;
+        justify-content: center;
     
-        img{
-            width: 100%;
-            height: 200px;
-            z-index: 0;
-            box-sizing: border-box;
-            transition: 0.5s all ease-in-out;
-            border: 4px solid white;
+        button{
+            background-color: white;
+            border: none;
+            padding: 0px;
+            text-align: left;
+
+        .product_card{
+            width: 200px;
+            box-sizing: content-box;
+            box-shadow: rgba(69, 69, 92, 0.2) 0px 7px 29px 0px;
+            cursor: pointer;
+            overflow: hidden;
+        
+            img{
+                width: 100%;
+                height: 200px;
+                z-index: 0;
+                box-sizing: border-box;
+                transition: 0.5s all ease-in-out;
+                border: 4px solid white;
+            }
+
+            img:hover{
+            transform: scale(1.2);
+            }
+
+            .product_card_info{
+
+                margin-top: 15px;
+                margin-bottom: 7.5px;
+                z-index: 2;
+                position: relative;
+
+                #item_header{
+                    font-size: 16px;
+                }
+
+                .rating_product_container{
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                    padding: 3px 10px;
+                }
+
+                #number_of_ratings{
+                    margin: 0px;
+                    padding: 0px 7px;
+                }
+                
+                p{
+                    font-family: $base-front;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    margin: 0px;
+                    padding: 1.5px 10px;
+                }
+            }
         }
-
-        img:hover{
-           transform: scale(1.2);
-        }
-
-        .product_card_info{
-
-            margin-top: 15px;
-            margin-bottom: 7.5px;
-            z-index: 2;
-            position: relative;
-
-            #item_header{
-                font-size: 16px;
-            }
-
-            .rating_product_container{
-                display: flex;
-                align-items: center;
-                flex-direction: row;
-                padding: 3px 10px;
-            }
-
-            #number_of_ratings{
-                margin: 0px;
-                padding: 0px 7px;
-            }
-            
-            p{
-                font-family: $base-front;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                margin: 0px;
-                padding: 1.5px 10px;
-            }
         }
     }
-}
-}
-}
+    }
+    }
 
-@media only screen and (max-width: $media_query_mediam_phone) {
-    .contaner_boreder{
-        margin: 0px 0px;
+    @media only screen and (max-width: $media_query_Xlarge_phone) {
+        .contaner_boreder{
+            margin: 0px 0px;
+            background-color: white;  
+
+            .contaner_product{
+                display: grid;
+                // grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                grid-template-columns: 50% 50%;
+                row-gap: 25px;
+                
+                form{
+
+            
+                button{
+                    background-color: white;
+                    border: none;
+                    padding: 0px;
+                    text-align: left;
+            
+                .product_card{
+                    width: 180px;
+                    box-sizing: content-box;
+                    box-shadow: rgba(69, 69, 92, 0.2) 0px 7px 29px 0px;
+                    cursor: pointer;
+                    overflow: hidden;
+                
+                    img{
+                        width: 100%;
+                        height: 200px;
+                        z-index: 0;
+                        box-sizing: border-box;
+                        transition: 0.5s all ease-in-out;
+                        border: 4px solid white;
+                    }
+            
+                    img:hover{
+                    transform: scale(1.2);
+                    }
+            
+                    .product_card_info{
+            
+                        margin-top: 15px;
+                        margin-bottom: 7.5px;
+                        z-index: 2;
+                        position: relative;
+            
+                        #item_header{
+                            font-size: 16px;
+                        }
+            
+                        .rating_product_container{
+                            display: flex;
+                            align-items: center;
+                            flex-direction: row;
+                            padding: 3px 10px;
+                        }
+            
+                        #number_of_ratings{
+                            margin: 0px;
+                            padding: 0px 7px;
+                        }
+                        
+                        p{
+                            font-family: $base-front;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            margin: 0px;
+                            padding: 1.5px 10px;
+                        }
+                    }
+                }
+            }
+            }
+        }
     }
 }
 

@@ -89,12 +89,12 @@
                                     <h2><%= item['productData']['title'] %></h2>
                                     <p>Price : £<%= (item['productData']['price'] * item['quantity']).toFixed(2)  %></p>
                                         <div class="full_form_container">
-                                            <button onclick="addItem('<%= item.productId %>')"><i class="fa-sharp fa-solid fa-plus fa-xl"></i></button>
+                                            <button onclick="addItem('<%= item.productId %>')" class="add-button"><i class="fa-sharp fa-solid fa-plus fa-xl"></i></button>
                                             <form action="/basket/update_product_quntity/<%= item['productId'] %>" method="post">
                                                 <input onclick="inputChange" class='quantityValue <%= item['productId']%>' id="<%= item['productId']%>" value="<%= item['quantity'] %>" name="newQuntity" type="number" min="0" max="100">
                                                 <input class="submit<%= item['productId'] %> submitButtonStyle" type="submit" value="Update" disabled="disabled">
                                             </form>
-                                            <button onclick="reduceItem('<%= item.productId %>')"><i class="fa-sharp fa-solid fa-minus fa-xl"></i></button>
+                                            <button onclick="reduceItem('<%= item.productId %>')" class="minus-button"><i class="fa-sharp fa-solid fa-minus fa-xl"></i></button>
                                         </div>
 
                                         <form class="basket_navigation_delete_small_screen" action="/basket/delete_item/<%= item['productId']%>" method="get">
