@@ -55,53 +55,57 @@
             </div>
         </div>
     </nav>
-    <div class="basket_container">
+    <div class="basketContainer">
         <% if(user_id === undefined) { %>
-            <div class="basket_message">
+            <div class="basketMessage">
                 <p>Sorry, you must sign in to your account in order to see your basket.</p>
                 <p><a href="./login">Sign in here</a></p>
             </div> 
         <% }else if(user_id !== undefined && basket_list.length === 0){ %>
-            <div class="basket_message">
+            <div class="basketMessage">
                 <p>Your basket is empty basket.</p>
             </div> 
         <% } else { %>
             <% if(basket_list.length !== 0){ %>
-            <div class="basket_checkout">
-                <div class="inner_Basket_checkout">
-                    <p>Discount none</p>
-                    <p>Shipping Price £5.00</p>
-                    <p>Total Price £<%= basket_list.reduce((a, b) => a + (b['productData']['price'] * b['quantity']), 0).toFixed(2) %></p>
+            <div class="basketCheckout">
+                <div class="innerBasketCheckout">
+                    <p>Discount None</p>
+                    <% if(0 > basket_list.reduce((a, b) => a + (b['productData']['price'] * b['quantity']), 0) > 30) {%>
+                        <p>Shipping Price : £ 5.00</p>
+                    <% } else {%>
+                        <p>Shipping Price : None</p>
+                    <% } %>
+                    <p>Total Price <%= basket_list.reduce((a, b) => a + (b['productData']['price'] * b['quantity']), 0).toFixed(2) %></p>
                     <button>Check Out</button>
                 </div>
             </div>
             <% } %>
-            <div class="basket_list_container">
+            <div class="basketListContainer">
                 <% if(basket_list.length > 0) { %>
                     <% basket_list.forEach((item) => { %>
-                        <div class="basket_item">
-                            <div class="basket_image">
+                        <div class="basketItem">
+                            <div class="basketImage">
                                 <img src="<%= item['productData']['image'] %>">
                             </div> 
-                            <div class="basket_item_container">
-                                <div class="basket_item_data">
-                                <div class="basket_information">
+                            <div class="basketItemContainer">
+                                <div class="basketItemData">
+                                <div class="basketInformation">
                                     <h2><%= item['productData']['title'] %></h2>
                                     <p>Price : £<%= (item['productData']['price'] * item['quantity']).toFixed(2)  %></p>
-                                        <div class="full_form_container">
-                                            <button onclick="addItem('<%= item.productId %>')" class="add-button"><i class="fa-sharp fa-solid fa-plus fa-xl"></i></button>
+                                        <div class="fullFormContainer">
+                                            <button onclick="addItem('<%= item.productId %>')" class="addButton"><i class="fa-sharp fa-solid fa-plus fa-xl"></i></button>
                                             <form action="/basket/update_product_quntity/<%= item['productId'] %>" method="post">
                                                 <input onclick="inputChange" class='quantityValue <%= item['productId']%>' id="<%= item['productId']%>" value="<%= item['quantity'] %>" name="newQuntity" type="number" min="0" max="100">
                                                 <input class="submit<%= item['productId'] %> submitButtonStyle" type="submit" value="Update" disabled="disabled">
                                             </form>
-                                            <button onclick="reduceItem('<%= item.productId %>')" class="minus-button"><i class="fa-sharp fa-solid fa-minus fa-xl"></i></button>
+                                            <button onclick="reduceItem('<%= item.productId %>')" class="minusButton"><i class="fa-sharp fa-solid fa-minus fa-xl"></i></button>
                                         </div>
 
-                                        <form class="basket_navigation_delete_small_screen" action="/basket/delete_item/<%= item['productId']%>" method="get">
+                                        <form class="basketNavigationDeleteSmallScreen" action="/basket/delete_item/<%= item['productId']%>" method="get">
                                             <button><i class="fa-sharp fa-solid fa-trash fa-xl"></i></button>
                                         </form>
                                 </div>
-                                <form class="basket_navigation" action="/basket/delete_item/<%= item['productId']%>" method="get">
+                                <form class="basketNavigation" action="/basket/delete_item/<%= item['productId']%>" method="get">
                                     <button><i class="fa-sharp fa-solid fa-trash fa-xl"></i></button>
                                 </form>
                             </div>
@@ -113,11 +117,15 @@
         <% } %>
     </div>
     <% if(basket_list.length > 2) {%>
-    <div class="basket_checkout_bottom">
-        <div class="inner_Basket_checkout">
-            <p>Discount none</p>
-            <p>Shipping Price £5.00</p>
-            <p>Total Price <%= basket_list.reduce((a, b) => a + (b['productData']['price'] * b['quantity']), 0) %></p>
+    <div class="basketCheckoutBottom">
+        <div class="innerBasketCheckout">
+            <p>Discount None</p>
+            <% if(0 > basket_list.reduce((a, b) => a + (b['productData']['price'] * b['quantity']), 0) > 30) {%>
+                <p>Shipping Price : £ 5.00</p>
+            <% } else {%>
+                <p>Shipping Price : None</p>
+            <% } %>
+            <p>Total Price <%= basket_list.reduce((a, b) => a + (b['productData']['price'] * b['quantity']), 0).toFixed(2) %></p>
             <button>Check Out</button>
         </div>
     </div>

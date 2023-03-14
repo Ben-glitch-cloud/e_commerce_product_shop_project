@@ -77,9 +77,9 @@ app.get('/basket', async function(req, res){
             return
         }
 
-            const result = await Promise.all(basket_user_data_only_id[0]['products'].map(async (basket_item) => {
-                basket_item['productData'] = await product_models.getOneProduct(basket_item['productId'])
-                return basket_item
+            const result = await Promise.all(basket_user_data_only_id[0]['products'].map(async (basketItem) => {
+                basketItem['productData'] = await product_models.getOneProduct(basketItem['productId'])
+                return basketItem
             }))
         
         

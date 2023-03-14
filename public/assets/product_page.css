@@ -26,12 +26,12 @@ body {
 .product_container .product_layout_page .product_info {
   margin: 0px 20px;
 }
-.product_container .product_layout_page .product_info .rating_product_container {
+.product_container .product_layout_page .product_info .ratingProductContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.product_container .product_layout_page .product_info .rating_product_container p {
+.product_container .product_layout_page .product_info .ratingProductContainer p {
   margin: 0px;
   padding-right: 10px;
 }

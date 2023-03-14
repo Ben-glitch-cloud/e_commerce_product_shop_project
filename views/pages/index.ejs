@@ -56,8 +56,8 @@
         </div>
         
     </nav>
-<section class="product_section">
-    <div class="product_section_container_header_form">
+<section class="productSection">
+    <div class="productSectionContainerHeaderForm">
         <h2><%= categorie_name %></h2> 
         <form action="/" method="post">
             <label class="form_search_categories"><p>Categories</p></label>
@@ -70,21 +70,21 @@
         </form>
     </div>
     
-    <div class="contaner_boreder">
-            <div class="contaner_product">
+    <div class="contanerBoreder">
+            <div class="contanerProduct">
                 <% products_data.forEach((item) => { %>
                     <form action="/product/<%= item['id'] %>" method="get"> 
                     <button type="submit" value="Submit">
-                    <div class="product_card">
+                    <div class="productCard">
                         <img src="<%= item['image'] %>"> 
-                        <div class="product_card_info">
-                            <p id="item_header"><%= item['title'] %></p>
+                        <div class="productCardInfo">
+                            <p id="itemHeader"><%= item['title'] %></p>
                             <p>£ <%= item['price'].toFixed(2) %></p>
-                            <div class="rating_product_container">
+                            <div class="ratingProductContainer">
                                 <% for(let i = 0; i < Math.round(item['rating']['rate']); i++ ) { %>
                                     <i class="fa-sharp fa-solid fa-star" style="color: #75A681;"></i>
                                 <% } %>
-                                <p id="number_of_ratings"><%= item['rating']['count'] %></p>
+                                <p id="numberOfRatings"><%= item['rating']['count'] %></p>
                             </div>
                         </div>
                     </div>

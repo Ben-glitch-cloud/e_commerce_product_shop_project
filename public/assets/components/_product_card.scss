@@ -1,13 +1,13 @@
 @import '../core/variables';
 @import '../core/media_query';
 
-.contaner_boreder{
+.contanerBoreder{
     background-color: #F2F1F0;  
     padding: 30px 0px;
     margin: 0px 25px;
     margin-bottom: 25px;
 
-    .contaner_product{
+    .contanerProduct{
         // width: 100%;
         display: grid;
         box-sizing: content-box;
@@ -28,7 +28,7 @@
             padding: 0px;
             text-align: left;
 
-        .product_card{
+        .productCard{
             width: 200px;
             box-sizing: content-box;
             box-shadow: rgba(69, 69, 92, 0.2) 0px 7px 29px 0px;
@@ -48,25 +48,25 @@
             transform: scale(1.2);
             }
 
-            .product_card_info{
+            .productCardInfo{
 
                 margin-top: 15px;
                 margin-bottom: 7.5px;
                 z-index: 2;
                 position: relative;
 
-                #item_header{
+                #itemHeader{
                     font-size: 16px;
                 }
 
-                .rating_product_container{
+                .ratingProductContainer{
                     display: flex;
                     align-items: center;
                     flex-direction: row;
                     padding: 3px 10px;
                 }
 
-                #number_of_ratings{
+                #numberOfRatings{
                     margin: 0px;
                     padding: 0px 7px;
                 }
@@ -87,11 +87,11 @@
     }
 
     @media only screen and (max-width: $media_query_Xlarge_phone) {
-        .contaner_boreder{
+        .contanerBoreder{
             margin: 0px 0px;
             background-color: white;  
 
-            .contaner_product{
+            .contanerProduct{
                 display: grid;
                 // grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
                 grid-template-columns: 50% 50%;
@@ -106,7 +106,7 @@
                     padding: 0px;
                     text-align: left;
             
-                .product_card{
+                .productCard{
                     width: 180px;
                     box-sizing: content-box;
                     box-shadow: rgba(69, 69, 92, 0.2) 0px 7px 29px 0px;
@@ -126,25 +126,25 @@
                     transform: scale(1.2);
                     }
             
-                    .product_card_info{
+                    .productCardInfo{
             
                         margin-top: 15px;
                         margin-bottom: 7.5px;
                         z-index: 2;
                         position: relative;
             
-                        #item_header{
+                        #itemHeader{
                             font-size: 16px;
                         }
             
-                        .rating_product_container{
+                        .ratingProductContainer{
                             display: flex;
                             align-items: center;
                             flex-direction: row;
                             padding: 3px 10px;
                         }
             
-                        #number_of_ratings{
+                        #numberOfRatings{
                             margin: 0px;
                             padding: 0px 7px;
                         }

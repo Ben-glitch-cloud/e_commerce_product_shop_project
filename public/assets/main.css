@@ -10,13 +10,13 @@ p {
   color: black;
 }
 
-.contaner_boreder {
+.contanerBoreder {
   background-color: #F2F1F0;
   padding: 30px 0px;
   margin: 0px 25px;
   margin-bottom: 25px;
 }
-.contaner_boreder .contaner_product {
+.contanerBoreder .contanerProduct {
   display: grid;
   box-sizing: content-box;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -26,24 +26,24 @@ p {
   justify-content: center;
   margin: 0px 10px;
 }
-.contaner_boreder .contaner_product form {
+.contanerBoreder .contanerProduct form {
   display: flex;
   justify-content: center;
 }
-.contaner_boreder .contaner_product form button {
+.contanerBoreder .contanerProduct form button {
   background-color: white;
   border: none;
   padding: 0px;
   text-align: left;
 }
-.contaner_boreder .contaner_product form button .product_card {
+.contanerBoreder .contanerProduct form button .productCard {
   width: 200px;
   box-sizing: content-box;
   box-shadow: rgba(69, 69, 92, 0.2) 0px 7px 29px 0px;
   cursor: pointer;
   overflow: hidden;
 }
-.contaner_boreder .contaner_product form button .product_card img {
+.contanerBoreder .contanerProduct form button .productCard img {
   width: 100%;
   height: 200px;
   z-index: 0;
@@ -51,29 +51,29 @@ p {
   transition: 0.5s all ease-in-out;
   border: 4px solid white;
 }
-.contaner_boreder .contaner_product form button .product_card img:hover {
+.contanerBoreder .contanerProduct form button .productCard img:hover {
   transform: scale(1.2);
 }
-.contaner_boreder .contaner_product form button .product_card .product_card_info {
+.contanerBoreder .contanerProduct form button .productCard .productCardInfo {
   margin-top: 15px;
   margin-bottom: 7.5px;
   z-index: 2;
   position: relative;
 }
-.contaner_boreder .contaner_product form button .product_card .product_card_info #item_header {
+.contanerBoreder .contanerProduct form button .productCard .productCardInfo #itemHeader {
   font-size: 16px;
 }
-.contaner_boreder .contaner_product form button .product_card .product_card_info .rating_product_container {
+.contanerBoreder .contanerProduct form button .productCard .productCardInfo .ratingProductContainer {
   display: flex;
   align-items: center;
   flex-direction: row;
   padding: 3px 10px;
 }
-.contaner_boreder .contaner_product form button .product_card .product_card_info #number_of_ratings {
+.contanerBoreder .contanerProduct form button .productCard .productCardInfo #numberOfRatings {
   margin: 0px;
   padding: 0px 7px;
 }
-.contaner_boreder .contaner_product form button .product_card .product_card_info p {
+.contanerBoreder .contanerProduct form button .productCard .productCardInfo p {
   font-family: "Lato", sans-serif;
   white-space: nowrap;
   overflow: hidden;
@@ -83,29 +83,29 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
-  .contaner_boreder {
+  .contanerBoreder {
     margin: 0px 0px;
     background-color: white;
   }
-  .contaner_boreder .contaner_product {
+  .contanerBoreder .contanerProduct {
     display: grid;
     grid-template-columns: 50% 50%;
     row-gap: 25px;
   }
-  .contaner_boreder .contaner_product form button {
+  .contanerBoreder .contanerProduct form button {
     background-color: white;
     border: none;
     padding: 0px;
     text-align: left;
   }
-  .contaner_boreder .contaner_product form button .product_card {
+  .contanerBoreder .contanerProduct form button .productCard {
     width: 180px;
     box-sizing: content-box;
     box-shadow: rgba(69, 69, 92, 0.2) 0px 7px 29px 0px;
     cursor: pointer;
     overflow: hidden;
   }
-  .contaner_boreder .contaner_product form button .product_card img {
+  .contanerBoreder .contanerProduct form button .productCard img {
     width: 100%;
     height: 200px;
     z-index: 0;
@@ -113,29 +113,29 @@ p {
     transition: 0.5s all ease-in-out;
     border: 4px solid white;
   }
-  .contaner_boreder .contaner_product form button .product_card img:hover {
+  .contanerBoreder .contanerProduct form button .productCard img:hover {
     transform: scale(1.2);
   }
-  .contaner_boreder .contaner_product form button .product_card .product_card_info {
+  .contanerBoreder .contanerProduct form button .productCard .productCardInfo {
     margin-top: 15px;
     margin-bottom: 7.5px;
     z-index: 2;
     position: relative;
   }
-  .contaner_boreder .contaner_product form button .product_card .product_card_info #item_header {
+  .contanerBoreder .contanerProduct form button .productCard .productCardInfo #itemHeader {
     font-size: 16px;
   }
-  .contaner_boreder .contaner_product form button .product_card .product_card_info .rating_product_container {
+  .contanerBoreder .contanerProduct form button .productCard .productCardInfo .ratingProductContainer {
     display: flex;
     align-items: center;
     flex-direction: row;
     padding: 3px 10px;
   }
-  .contaner_boreder .contaner_product form button .product_card .product_card_info #number_of_ratings {
+  .contanerBoreder .contanerProduct form button .productCard .productCardInfo #numberOfRatings {
     margin: 0px;
     padding: 0px 7px;
   }
-  .contaner_boreder .contaner_product form button .product_card .product_card_info p {
+  .contanerBoreder .contanerProduct form button .productCard .productCardInfo p {
     font-family: "Lato", sans-serif;
     white-space: nowrap;
     overflow: hidden;
@@ -243,22 +243,22 @@ nav img {
     display: block !important;
   }
 }
-.product_section {
+.productSection {
   width: 100%;
   height: 250px;
 }
-.product_section .product_section_container_header_form {
+.productSection .productSectionContainerHeaderForm {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0px 25px;
 }
-.product_section .product_section_container_header_form form {
+.productSection .productSectionContainerHeaderForm form {
   display: flex;
   flex-direction: row;
   font-family: "Lato", sans-serif;
 }
-.product_section .product_section_container_header_form form label {
+.productSection .productSectionContainerHeaderForm form label {
   height: 35px;
   width: 100px;
   font-size: 16px;
@@ -271,11 +271,11 @@ nav img {
   border-left: 3px solid #75A681;
   border-right: none;
 }
-.product_section .product_section_container_header_form form label p {
+.productSection .productSectionContainerHeaderForm form label p {
   position: relative;
   bottom: 1px;
 }
-.product_section .product_section_container_header_form form select {
+.productSection .productSectionContainerHeaderForm form select {
   width: 180px;
   text-align: center;
   font-size: 16px;
@@ -284,7 +284,7 @@ nav img {
   border-left: none;
   border-right: none;
 }
-.product_section .product_section_container_header_form form button {
+.productSection .productSectionContainerHeaderForm form button {
   width: 40px;
   border-top: 3px solid #75A681;
   border-bottom: 3px solid #75A681;
@@ -292,14 +292,14 @@ nav img {
   border-right: 3px solid #75A681;
   background-color: white;
 }
-.product_section .product_section_container_header_form form button :hover {
+.productSection .productSectionContainerHeaderForm form button :hover {
   color: #75A681;
 }
-.product_section .product_section_container_header_form h2 {
+.productSection .productSectionContainerHeaderForm h2 {
   font-family: "Roboto Mono", monospace;
 }
 @media only screen and (max-width: 750px) {
-  .product_section .product_section_container_header_form {
+  .productSection .productSectionContainerHeaderForm {
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 20px;

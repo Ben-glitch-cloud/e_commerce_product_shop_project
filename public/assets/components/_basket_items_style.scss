@@ -1,14 +1,14 @@
 @import '../core/variables';
 
 
-.basket_list_container{
+.basketListContainer{
     display: flex;
     flex-direction: column;
     margin: 20px 25px;
     background-color: lightgray;
 
 
-    .basket_item{
+    .basketItem{
         height: 220px;
         background: white;
         display: flex;
@@ -24,7 +24,7 @@
         }
 
 
-        .basket_image img{
+        .basketImage img{
             background-color: white;
             height: 100%;
             width: 280px;
@@ -34,7 +34,7 @@
             border: 5px solid white;
         }
 
-        .basket_item_container{
+        .basketItemContainer{
             width: 100%;
             box-sizing: border-box;
 
@@ -42,20 +42,20 @@
                 margin-bottom: 25px;
             }
 
-            .basket_item_data{
+            .basketItemData{
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 height: 100%;
 
-                &:hover > .basket_navigation{
+                &:hover > .basketNavigation{
                     animation-name: navBar;
                     animation-duration: 1s;
                     animation-timing-function: ease;
                     animation-fill-mode: forwards;
                 }
 
-                .basket_information{
+                .basketInformation{
                     margin: 0px;
                     padding: 0px;
                     width: 100%;
@@ -79,7 +79,7 @@
                         font-family: $base-front;
                     }
 
-                    .basket_navigation_delete_small_screen{
+                    .basketNavigationDeleteSmallScreen{
 
                         display: none;
                         margin-top: 15px;
@@ -102,7 +102,7 @@
 
                     }
 
-                    .full_form_container{
+                    .fullFormContainer{
 
                         display: flex;
                         flex-direction: row;
@@ -119,20 +119,19 @@
                             }
                         }
 
-                        .add-button{
+                        .addButton{
                             border-left: 4px solid $main-green-colour;
                             border-top: 4px solid $main-green-colour;
                             border-bottom: 4px solid $main-green-colour;
                             border-right: none;
                         }
 
-                        .minus-button{
+                        .minusButton{
                             border-right: 4px solid $main-green-colour;
                             border-top: 4px solid $main-green-colour;
                             border-bottom: 4px solid $main-green-colour;
                             border-left: none;
                         }
-                    
 
                         form{
                             
@@ -166,7 +165,7 @@
                     }
                 }
 
-                .basket_navigation{
+                .basketNavigation{
                     display: flex;
                     width: 0px;
                     z-index: 1;

@@ -21,7 +21,6 @@ export default class Basket {
 
         let no_product_id_found = false
 
-        console.log(product_id, quanity, basket, 'see this data')
         basket[0]['products'].forEach((item) => {
             if(item['productId'] === Number(product_id)){
                 no_product_id_found = true
