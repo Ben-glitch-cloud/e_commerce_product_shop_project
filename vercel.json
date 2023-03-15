@@ -2,7 +2,7 @@
     "verson": 2, 
     "build": [
         {
-            "scr": "./app.js", 
+            "scr": "./index.js", 
             "use": "@vercel/node"
         }
     ], 
