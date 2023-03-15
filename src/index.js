@@ -4,12 +4,17 @@ import path from 'path';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import { fileURLToPath } from 'url';
-import ProductModels from './model/products.js';
-import Users from './model/users.js'
-import Basket from './model/basket.js'
+import ProductModels from '../model/products.js';
+import Users from '../model/users.js'
+import Basket from '../model/basket.js'
+
+
+
 
 const app = express()
 const port = 3000
+
+const rounter = express.Router();
 
 
 app.use(bodyParser.urlencoded({
@@ -142,10 +147,12 @@ app.post('/basket/update_product_quntity/:id', function(req, res){
     res.redirect('/basket')
 })
 
+app.use('/netlify/functions/index', rounter)
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
+
 
 
 
