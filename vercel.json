@@ -1,0 +1,15 @@
+{
+    "verson": 2, 
+    "build": [
+        {
+            "scr": "./app.js", 
+            "use": "@vercel/node"
+        }
+    ], 
+    "routes":[
+        {
+            "scr": "/(.*)",
+            "dest": "/"
+        }
+    ]
+}
