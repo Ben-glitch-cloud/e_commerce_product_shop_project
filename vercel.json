@@ -2,14 +2,14 @@
     "verson": 2, 
     "build": [
         {
-            "scr": "./index.js", 
+            "scr": "./app.js", 
             "use": "@vercel/node"
         }
     ], 
-    "routes":[
+    "rewrites":[
         {
-            "scr": "/(.*)",
-            "dest": "/"
+            "source": "/(.*)",
+            "destination": "/index.ejs"
         }
     ]
 }

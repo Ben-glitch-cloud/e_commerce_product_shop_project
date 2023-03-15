@@ -142,9 +142,12 @@ app.post('/basket/update_product_quntity/:id', function(req, res){
     res.redirect('/basket')
 })
 
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
+
+
 
 
 
